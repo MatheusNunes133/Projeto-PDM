@@ -8,6 +8,14 @@ export const ContainerButton = styled.TouchableOpacity`
     return props.colorButton;
   }};
   height: 60px;
+  border-width: 1px;
+  border-color: ${(props) => {
+    if (props.strokeColor) {
+      return "#FB9400";
+    } else {
+      return "";
+    }
+  }};
   border-radius: 5px;
 `;
 
