@@ -8,6 +8,7 @@ import Button from "../../components/Button";
 
 import {
   Container,
+  ScrollView,
   StatusBar,
   Header,
   ArrowBack,
@@ -15,34 +16,57 @@ import {
   InfoLogin,
   ContainerInputs,
   ContainerButton,
+  ContainerSenha,
+  EsqueceuSenha,
+  ButtonRecuperar,
+  RecuperarSenha,
+  ContainerCadastro,
 } from "../../global/styles/Login/login";
 
 export default function Login() {
   return (
     <Container>
-      <StatusBar />
-      <Header>
-        <ArrowBack onPress={() => alert("Clicou Para Voltar")}>
-          <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
-        </ArrowBack>
-        <ContainerLogo>
-          <Logo />
-        </ContainerLogo>
-        <InfoLogin>Use suas credenciais para realizar o login.</InfoLogin>
+      <ScrollView>
+        <StatusBar />
+        <Header>
+          <ArrowBack onPress={() => alert("Clicou Para Voltar")}>
+            <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
+          </ArrowBack>
+          <ContainerLogo>
+            <Logo />
+          </ContainerLogo>
+          <InfoLogin>Use suas credenciais para realizar o login.</InfoLogin>
+        </Header>
         <Linhas />
-      </Header>
-      <ContainerInputs>
-        <Inputs placeholder="Digite seu e-mail" />
-        <Inputs placeholder="Digite sua senha" secure={true} />
-      </ContainerInputs>
-      <ContainerButton>
-        <Button
-          text="Enviar"
-          color="#FB9400"
-          textColor="#fff"
-          funcao={() => alert("Clicou Para Enviar")}
-        />
-      </ContainerButton>
+        <ContainerInputs>
+          <Inputs placeholder="Digite seu e-mail" />
+          <Inputs placeholder="Digite sua senha" secure={true} />
+        </ContainerInputs>
+        <ContainerButton>
+          <Button
+            text="Enviar"
+            color="#FB9400"
+            textColor="#fff"
+            funcao={() => alert("Clicou Para Enviar")}
+          />
+        </ContainerButton>
+        <ContainerSenha>
+          <EsqueceuSenha>Esqueceu sua senha?</EsqueceuSenha>
+          <ButtonRecuperar>
+            <RecuperarSenha>Clique aqui</RecuperarSenha>
+          </ButtonRecuperar>
+        </ContainerSenha>
+        <Linhas />
+        <ContainerCadastro>
+          <Button
+            text="Quero me Cadastrar"
+            color="#fff"
+            textColor="#FB9400"
+            strokeColor
+            funcao={() => alert("Cadastrar")}
+          />
+        </ContainerCadastro>
+      </ScrollView>
     </Container>
   );
 }
