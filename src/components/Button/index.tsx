@@ -10,6 +10,7 @@ interface PropsButton {
   textColor: string;
   text: string;
   funcao?: Function;
+  strokeColor?: boolean;
 }
 
 export default function Button({
@@ -17,9 +18,14 @@ export default function Button({
   textColor,
   text,
   funcao,
+  strokeColor,
 }: PropsButton) {
   return (
-    <ContainerButton colorButton={color} onPress={funcao}>
+    <ContainerButton
+      colorButton={color}
+      onPress={funcao}
+      strokeColor={strokeColor}
+    >
       <TextButton textColor={textColor}>{text}</TextButton>
     </ContainerButton>
   );
