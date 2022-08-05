@@ -6,6 +6,8 @@ export const Container = styled.View`
   background-color: #ffffff;
 `;
 
+export const ScrollView = styled.ScrollView``;
+
 export const StatusBar = styled.StatusBar``;
 
 export const Header = styled.View`
@@ -41,4 +43,34 @@ export const ContainerInputs = styled.View`
 export const ContainerButton = styled.View`
   display: flex;
   margin: 0 5% 0 5%;
+`;
+
+export const ContainerSenha = styled.View`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+export const EsqueceuSenha = styled.Text`
+  color: #1b1b1b;
+  text-align: center;
+  margin: 15% 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+`;
+
+export const ButtonRecuperar = styled.TouchableOpacity``;
+
+export const RecuperarSenha = styled.Text`
+  color: #fb9400;
+  margin-left: 5%;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+`;
+
+export const ContainerCadastro = styled.View`
+  display: flex;
+  margin: 0 5% 10% 5%;
 `;
