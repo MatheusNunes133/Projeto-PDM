@@ -53,7 +53,11 @@ export default function Login({ navigation }) {
         </ContainerButton>
         <ContainerSenha>
           <EsqueceuSenha>Esqueceu sua senha?</EsqueceuSenha>
-          <ButtonRecuperar>
+          <ButtonRecuperar
+            onPress={() => {
+              navigation.navigate("EsqueceuASenha");
+            }}
+          >
             <RecuperarSenha>Clique aqui</RecuperarSenha>
           </ButtonRecuperar>
         </ContainerSenha>
