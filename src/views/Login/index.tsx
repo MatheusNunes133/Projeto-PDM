@@ -23,7 +23,7 @@ import {
   ContainerCadastro,
 } from "../../global/styles/Login/login";
 
-export default function Login() {
+export default function Login({ navigation }) {
   return (
     <Container>
       <ScrollView>
@@ -47,6 +47,7 @@ export default function Login() {
             text="Enviar"
             color="#FB9400"
             textColor="#fff"
+            strokeColor
             funcao={() => alert("Clicou Para Enviar")}
           />
         </ContainerButton>
@@ -63,7 +64,9 @@ export default function Login() {
             color="#fff"
             textColor="#FB9400"
             strokeColor
-            funcao={() => alert("Cadastrar")}
+            funcao={() => {
+              return navigation.navigate("Cadastro");
+            }}
           />
         </ContainerCadastro>
       </ScrollView>
