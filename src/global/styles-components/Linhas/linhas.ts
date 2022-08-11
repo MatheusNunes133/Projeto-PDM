@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 export const ContainerLinhas = styled.View`
   display: flex;
   width: 100%;
-  margin: 15% 5%;
+  padding: 15% 5%;
 `;
 
 export const LinhaCinza = styled.View`

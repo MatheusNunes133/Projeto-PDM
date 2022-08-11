@@ -28,7 +28,7 @@ export default function Cadastro({ navigation }) {
       <ScrollView>
         <StatusBar />
         <Header>
-          <ArrowBack onPress={() => alert("Clicou Para Voltar")}>
+          <ArrowBack onPress={() => navigation.navigate("Login")}>
             <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
           </ArrowBack>
           <ContainerLogo>

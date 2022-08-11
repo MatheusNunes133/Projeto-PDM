@@ -13,34 +13,36 @@ import {
   Header,
   ArrowBack,
   ContainerLogo,
-  InfoLogin,
   ContainerInputs,
   ContainerButton,
-  ContainerSenha,
-  EsqueceuSenha,
-  ButtonRecuperar,
-  RecuperarSenha,
-  ContainerCadastro,
 } from "../../global/styles/Login/login";
 
-export default function Login({ navigation }) {
+import {
+  TitlePage,
+  InfoLogin,
+} from "../../global/styles/EsqueceuASenha/esqueceuASenha";
+
+export default function EsqueceuASenha({ navigation }) {
   return (
     <Container>
       <ScrollView>
         <StatusBar />
         <Header>
-          <ArrowBack onPress={() => alert("Clicou Para Voltar")}>
+          <ArrowBack onPress={() => navigation.navigate("Login")}>
             <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
           </ArrowBack>
           <ContainerLogo>
             <Logo />
           </ContainerLogo>
-          <InfoLogin>Use suas credenciais para realizar o login.</InfoLogin>
+          <TitlePage>Esqueceu sua senha?</TitlePage>
+          <InfoLogin>
+            Preencha o campo com seu e-mail e receba as instruções necessárias
+            para redefinir a sua senha.
+          </InfoLogin>
         </Header>
         <Linhas />
         <ContainerInputs>
           <Inputs placeholder="Digite seu e-mail" />
-          <Inputs placeholder="Digite sua senha" secure={true} />
         </ContainerInputs>
         <ContainerButton>
           <Button
@@ -51,28 +53,6 @@ export default function Login({ navigation }) {
             funcao={() => alert("Clicou Para Enviar")}
           />
         </ContainerButton>
-        <ContainerSenha>
-          <EsqueceuSenha>Esqueceu sua senha?</EsqueceuSenha>
-          <ButtonRecuperar
-            onPress={() => {
-              navigation.navigate("EsqueceuASenha");
-            }}
-          >
-            <RecuperarSenha>Clique aqui</RecuperarSenha>
-          </ButtonRecuperar>
-        </ContainerSenha>
-        <Linhas />
-        <ContainerCadastro>
-          <Button
-            text="Quero me Cadastrar"
-            color="#fff"
-            textColor="#FB9400"
-            strokeColor
-            funcao={() => {
-              return navigation.navigate("Cadastro");
-            }}
-          />
-        </ContainerCadastro>
       </ScrollView>
     </Container>
   );
