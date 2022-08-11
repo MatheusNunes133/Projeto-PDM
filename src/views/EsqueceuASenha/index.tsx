@@ -50,7 +50,7 @@ export default function EsqueceuASenha({ navigation }) {
             color="#FB9400"
             textColor="#fff"
             strokeColor
-            funcao={() => alert("Clicou Para Enviar")}
+            funcao={() => navigation.navigate("Mensagem")}
           />
         </ContainerButton>
       </ScrollView>
