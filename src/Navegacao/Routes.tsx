@@ -6,6 +6,7 @@ const { Navigator, Screen } = createNativeStackNavigator();
 import Login from "../views/Login";
 import Cadastro from "../views/Cadastro";
 import EsqueceuASenha from "../views/EsqueceuASenha";
+import Mensagem from "../views/Mensagem";
 
 function Navegacao() {
   return (
@@ -24,6 +25,11 @@ function Navegacao() {
         <Screen
           name="EsqueceuASenha"
           component={EsqueceuASenha}
+          options={{ headerShown: false }}
+        />
+        <Screen
+          name="Mensagem"
+          component={Mensagem}
           options={{ headerShown: false }}
         />
       </Navigator>
