@@ -27,7 +27,7 @@ export default function Login({ navigation }) {
   return (
     <Container>
       <ScrollView>
-        <StatusBar />
+        <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
         <Header>
           <ArrowBack onPress={() => alert("Clicou Para Voltar")}>
             <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
