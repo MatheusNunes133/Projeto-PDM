@@ -4,7 +4,7 @@ export const TitlePage = styled.Text`
   color: #1b1b1b;
   font-size: 24px;
   font-weight: 600;
-  line-hieght: 29px;
+  line-height: 29px;
   margin: 10% 0 5% 0;
 `;
 
