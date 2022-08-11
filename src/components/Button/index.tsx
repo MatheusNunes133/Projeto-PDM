@@ -5,14 +5,6 @@ import {
   TextButton,
 } from "../../global/styles-components/Button/button";
 
-interface PropsButton {
-  color: string;
-  textColor: string;
-  text: string;
-  funcao?: Function;
-  strokeColor?: boolean;
-}
-
 export default function Button({
   color,
   textColor,
