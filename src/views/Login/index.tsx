@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { BackHandler } from "react-native";
 
 import Arrows from "../../components/Arrows";
 import Logo from "../../components/Logo";
@@ -24,6 +25,12 @@ import {
 } from "../../global/styles/Login/login";
 
 export default function Login({ navigation }) {
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", () => {
+      return true;
+    });
+  });
+
   return (
     <Container>
       <ScrollView>
