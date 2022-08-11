@@ -9,7 +9,7 @@ import { StatusBar } from "../../global/styles/Login/login";
 
 import Logo from "../../components/Logo";
 
-export default function SplashScreen({ navigation }) {
+export default function SplashScreen({ navigation }: PropsNavigation) {
   return (
     <Container>
       <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />

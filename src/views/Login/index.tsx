@@ -24,7 +24,7 @@ import {
   ContainerCadastro,
 } from "../../global/styles/Login/login";
 
-export default function Login({ navigation }) {
+export default function Login({ navigation }: PropsNavigation) {
   useEffect(() => {
     BackHandler.addEventListener("hardwareBackPress", () => {
       return true;
