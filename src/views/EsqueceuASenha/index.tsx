@@ -22,7 +22,7 @@ import {
   InfoLogin,
 } from "../../global/styles/EsqueceuASenha/esqueceuASenha";
 
-export default function EsqueceuASenha({ navigation }) {
+export default function EsqueceuASenha({ navigation }: PropsNavigation) {
   return (
     <Container>
       <ScrollView>

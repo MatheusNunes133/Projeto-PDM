@@ -22,7 +22,7 @@ import Linhas from "../../components/Linhas";
 import Inputs from "../../components/Inputs";
 import Button from "../../components/Button";
 
-export default function Cadastro({ navigation }) {
+export default function Cadastro({ navigation }: PropsNavigation) {
   return (
     <Container>
       <ScrollView>
