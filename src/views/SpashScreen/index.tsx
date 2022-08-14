@@ -20,7 +20,7 @@ export default function SplashScreen({ navigation }: PropsNavigation) {
           autoPlay
           loop={false}
           onAnimationFinish={() => {
-            navigation.navigate("Login");
+            navigation.navigate("Cardapio");
           }}
         />
       </ContainerAnimation>
