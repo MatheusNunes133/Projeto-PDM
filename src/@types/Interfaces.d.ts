@@ -24,4 +24,12 @@ export declare global {
     placeholder: string;
     secure?: boolean;
   }
+
+  interface PropsCardsCardapio {
+    image: NodeRequire;
+    hamburguerType: string;
+    hamburguerName: string;
+    hamburguerPrice: string;
+    funcao: Function;
+  }
 }
