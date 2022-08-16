@@ -2,6 +2,7 @@ export declare global {
   interface PropsNavigation {
     navigation: {
       navigate: Function;
+      openDrawer: Function;
     };
   }
 
@@ -22,5 +23,13 @@ export declare global {
   interface PropsInputs {
     placeholder: string;
     secure?: boolean;
+  }
+
+  interface PropsCardsCardapio {
+    image: NodeRequire;
+    hamburguerType: string;
+    hamburguerName: string;
+    hamburguerPrice: string;
+    funcao: Function;
   }
 }
