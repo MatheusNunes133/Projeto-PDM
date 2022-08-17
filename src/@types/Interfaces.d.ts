@@ -3,6 +3,7 @@ export declare global {
     navigation: {
       navigate: Function;
       openDrawer: Function;
+      goBack: Function;
     };
   }
 
