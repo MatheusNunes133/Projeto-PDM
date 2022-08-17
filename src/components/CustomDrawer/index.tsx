@@ -19,7 +19,7 @@ export default function CustomDrawer(props: DrawerContentComponentProps) {
       <ButtonLogin
         onPress={() => {
           const { navigation } = props;
-          console.log(navigation.navigate("Login"));
+          navigation.navigate("Login");
         }}
       >
         <TextButton>Fazer Login</TextButton>
