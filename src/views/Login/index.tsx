@@ -29,7 +29,7 @@ export default function Login({ navigation }: PropsNavigation) {
       <ScrollView>
         <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
         <Header>
-          <ArrowBack onPress={() => alert("Clicou Para Voltar")}>
+          <ArrowBack onPress={() => navigation.goBack()}>
             <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
           </ArrowBack>
           <ContainerLogo>
