@@ -86,7 +86,15 @@ export default function Cardapio({ navigation }: PropsNavigation) {
             hamburguerName="Texas Bruguer"
             hamburguerPrice="R$ 25,50"
             funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
+              navigation.navigate("Produtos", {
+                paramKey: {
+                  image: require("../../../assets/images/img-Texas-Burger.png"),
+                  hamburguerType: "Tradicional",
+                  hamburguerName: "Texas Bruguer",
+                  hamburguerPrice: "R$ 25,50",
+                  desc: "2 Blends de carne de 150g, Queijo Cheddar,Bacon Caramelizado, Salada, Molho da casa,Pão brioche artesanal ",
+                },
+              });
             }}
           />
           <CardsCardapio
@@ -95,7 +103,15 @@ export default function Cardapio({ navigation }: PropsNavigation) {
             hamburguerName="Golden Burger"
             hamburguerPrice="R$ 25,50"
             funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
+              navigation.navigate("Produtos", {
+                paramKey: {
+                  image: require("../../../assets/images/img-Golden-Burger.png"),
+                  hamburguerType: "Tradicional",
+                  hamburguerName: "Golden Burger",
+                  hamburguerPrice: "R$ 25,50",
+                  desc: "Descrição",
+                },
+              });
             }}
           />
           <CardsCardapio
@@ -104,7 +120,15 @@ export default function Cardapio({ navigation }: PropsNavigation) {
             hamburguerName="Monster Burger"
             hamburguerPrice="R$ 25,50"
             funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
+              navigation.navigate("Produtos", {
+                paramKey: {
+                  image: require("../../../assets/images/img-Monster-Burger.png"),
+                  hamburguerType: "Tradicional",
+                  hamburguerName: "Monster Burger",
+                  hamburguerPrice: "R$ 25,50",
+                  desc: "Descrição",
+                },
+              });
             }}
           />
           <CardsCardapio
@@ -113,7 +137,15 @@ export default function Cardapio({ navigation }: PropsNavigation) {
             hamburguerName="Old Burger"
             hamburguerPrice="R$ 25,50"
             funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
+              navigation.navigate("Produtos", {
+                paramKey: {
+                  image: require("../../../assets/images/img-OldBurger.png"),
+                  hamburguerType: "Tradicional",
+                  hamburguerName: "Old Burger",
+                  hamburguerPrice: "R$ 25,50",
+                  desc: "Descrição",
+                },
+              });
             }}
           />
         </ContainerCardapio>
