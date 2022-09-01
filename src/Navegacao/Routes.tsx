@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -15,6 +15,7 @@ import Mensagem from "../views/Mensagem";
 import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
+import Pedidos from "../views/Pedidos";
 
 function DrawerNavigation() {
   return (
@@ -65,7 +66,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Meus Pedidos"
-        component={Cardapio}
+        component={Pedidos}
         options={{
           drawerIcon: () => {
             return <Icone name="playlist-edit" size={15} color="#6A7D8B" />;
@@ -103,6 +104,11 @@ function Navegacao() {
           name="Login"
           component={Login}
           options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Pedidos"
+          component={Pedidos}
+          options={{ headerShown: true }}
         />
         <Stack.Screen
           name="Cadastro"
