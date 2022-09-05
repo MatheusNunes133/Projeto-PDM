@@ -15,6 +15,7 @@ import Mensagem from "../views/Mensagem";
 import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
+import Produtos from "../views/Produtos";
 
 function DrawerNavigation() {
   return (
@@ -117,6 +118,11 @@ function Navegacao() {
         <Stack.Screen
           name="Mensagem"
           component={Mensagem}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Produtos"
+          component={Produtos}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

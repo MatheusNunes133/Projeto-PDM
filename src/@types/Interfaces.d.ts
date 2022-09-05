@@ -5,6 +5,7 @@ export declare global {
       openDrawer: Function;
       goBack: Function;
     };
+    route: Object;
   }
 
   interface PropsArrows {
