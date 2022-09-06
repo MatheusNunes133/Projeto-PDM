@@ -15,6 +15,7 @@ import Mensagem from "../views/Mensagem";
 import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
+import Perfil from "../views/Perfil";
 
 function DrawerNavigation() {
   return (
@@ -78,6 +79,15 @@ function DrawerNavigation() {
         options={{
           drawerIcon: () => {
             return <IconeTwo name="settings" size={15} color="#6A7D8B" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Perfil"
+        component={Perfil}
+        options={{
+          drawerIcon: () => {
+            return <IconeTwo name="user" size={15} color="#6A7D8B" />;
           },
         }}
       />
