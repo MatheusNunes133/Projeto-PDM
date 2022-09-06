@@ -1,37 +1,30 @@
 import React from "react";
 
+import Icone from "react-native-vector-icons/MaterialCommunityIcons";
 import {
-  ArrowBack,
   Container,
-  ContainerLogo,
   ScrollView,
-  StatusBar,
-  Header,
-  InfoLogin,
   ContainerInputs,
-  ContainerSenha,
-  EsqueceuSenha,
-  RecuperarSenha,
-  ButtonRecuperar,
   ContainerButton,
 } from "../../global/styles/Login/login";
 
 import {
-Title
+Title,
+Header
 } from "../../global/styles/Perfil/Perfil";
 
-import Arrows from "../../components/Arrows";
 import Linhas from "../../components/Linhas";
 import Inputs from "../../components/Inputs";
 import Button from "../../components/Button";
 
-export default function Cadastro({ navigation }: PropsNavigation) {
+export default function Perfil({ navigation }: PropsNavigation) {
   return (
     <Container>
       <ScrollView>
-        <StatusBar backgroundColor={"#fff"} barStyle={"dark-content"} />
+        <Icone name="arrow-left" size={30} color="#FB9400" />
         <Header>
-          <Title>Perfil</Title>
+        <Title>Perfil</Title>
+           <Icone name="account-circle-outline" size={95} color="#6A7D8B"/>
         </Header>
         <Linhas />
         <ContainerInputs>

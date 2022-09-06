@@ -87,7 +87,7 @@ function DrawerNavigation() {
         component={Perfil}
         options={{
           drawerIcon: () => {
-            return <IconeTwo name="user" size={15} color="#6A7D8B" />;
+            return <Icone name="account-circle-outline" size={15} color="#6A7D8B" />;
           },
         }}
       />
