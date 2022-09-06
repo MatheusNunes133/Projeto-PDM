@@ -2,15 +2,13 @@ import React from "react";
 
 import Icone from "react-native-vector-icons/MaterialCommunityIcons";
 import {
-  Container,
-  ScrollView,
-  ContainerInputs,
-  ContainerButton,
-} from "../../global/styles/Login/login";
-
-import {
 Title,
-Header
+Header,
+Container,
+ScrollView,
+ContainerInputs,
+ContainerButton,
+ContainerIcon
 } from "../../global/styles/Perfil/Perfil";
 
 import Linhas from "../../components/Linhas";
@@ -21,14 +19,16 @@ export default function Perfil({ navigation }: PropsNavigation) {
   return (
     <Container>
       <ScrollView>
+        <ContainerIcon>
         <Icone name="arrow-left" size={30} color="#FB9400" />
+        </ContainerIcon>
         <Header>
         <Title>Perfil</Title>
            <Icone name="account-circle-outline" size={95} color="#6A7D8B"/>
         </Header>
         <Linhas />
         <ContainerInputs>
-          <Inputs placeholder="Fulano da silva Diniz" />
+          <Inputs placeholder="Fábio da silva Diniz" />
           <Inputs placeholder="fad@gmail.com" />
           <Inputs placeholder="nova senha" secure />
           <Inputs placeholder="Upload de imagem" />

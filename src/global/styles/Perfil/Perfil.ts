@@ -11,3 +11,23 @@ export const Header = styled.View`
   align-items: center;
   margin: 10% 5% -55px 5%;
 `;
+export const Container = styled.View`
+  display: flex;
+  flex: 1;
+  background-color: #ffffff;
+`;
+
+export const ScrollView = styled.ScrollView``;
+export const ContainerInputs = styled.View`
+  display: flex;
+  margin: 0 5% 0 5%;
+`;
+
+export const ContainerButton = styled.View`
+  display: flex;
+  margin: 0 5% 0 5%;
+`;
+export const ContainerIcon = styled.View`
+  display: flex;
+  margin: 12% 3% 3% 10%;
+`;
