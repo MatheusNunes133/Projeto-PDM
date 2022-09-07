@@ -16,6 +16,9 @@ import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
 import Produtos from "../views/Produtos";
+import Checkout from "../views/Checkout"
+import Enderecos from "../views/Enderecos";
+import Pedidos from "../views/Pedidos";
 
 function DrawerNavigation() {
   return (
@@ -46,7 +49,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Sacola"
-        component={Cardapio}
+        component={Checkout}
         options={{
           drawerIcon: () => {
             return <Icone name="shopping" size={15} color="#6A7D8B" />;
@@ -66,7 +69,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Meus Pedidos"
-        component={Cardapio}
+        component={Pedidos}
         options={{
           drawerIcon: () => {
             return <Icone name="playlist-edit" size={15} color="#6A7D8B" />;
@@ -123,6 +126,21 @@ function Navegacao() {
         <Stack.Screen
           name="Produtos"
           component={Produtos}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Checkout"
+          component={Checkout}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Endereco"
+          component={Enderecos}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Pedidos"
+          component={Pedidos}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
