@@ -22,6 +22,17 @@ export declare global {
     strokeColor?: boolean;
   }
 
+  interface PropsButtonIcon {
+    icon: string;
+    color: string;
+    funcao?: Function;
+    height: number;
+    width: number;
+    marginLeft: number;
+    marginRight: number;
+    marginBottom: number;
+  }
+
   interface PropsInputs {
     placeholder: string;
     secure?: boolean;

@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from 'react';
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -15,10 +15,13 @@ import Mensagem from "../views/Mensagem";
 import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
+import PedidosCalendario from "../views/PedidosCalendario";
+import RelacaoPedidos from "../views/RelacaoPedidos";
 import Produtos from "../views/Produtos";
 import Checkout from "../views/Checkout"
 import Enderecos from "../views/Enderecos";
 import Pedidos from "../views/Pedidos";
+
 
 function DrawerNavigation() {
   return (
@@ -109,6 +112,16 @@ function Navegacao() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
+          name="PedidosCalendario"
+          component={PedidosCalendario}
+          options={{ headerShown: true }}
+        />
+         <Stack.Screen
+          name="RelacaoPedidos"
+          component={RelacaoPedidos}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
           name="Cadastro"
           component={Cadastro}
           options={{ headerShown: false }}
@@ -147,7 +160,6 @@ function Navegacao() {
     </NavigationContainer>
   );
 }
-
 export default function Routes() {
   return <Navegacao />;
 }
