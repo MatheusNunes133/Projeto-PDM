@@ -15,7 +15,7 @@ import Mensagem from "../views/Mensagem";
 import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
-import Pedidos from "../views/Pedidos";
+import PedidosCalendario from "../views/PedidosCalendario";
 import RelacaoPedidos from "../views/RelacaoPedidos";
 
 
@@ -68,7 +68,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Meus Pedidos"
-        component={Pedidos}
+        component={PedidosCalendario}
         options={{
           drawerIcon: () => {
             return <Icone name="playlist-edit" size={15} color="#6A7D8B" />;
@@ -108,8 +108,8 @@ function Navegacao() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Pedidos"
-          component={Pedidos}
+          name="PedidosCalendario"
+          component={PedidosCalendario}
           options={{ headerShown: true }}
         />
         <Stack.Screen

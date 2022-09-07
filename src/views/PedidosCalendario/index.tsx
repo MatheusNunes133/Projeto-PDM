@@ -1,13 +1,10 @@
-import React, { Component, useState } from "react";
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, View} from 'react-native';
 import Icone from "react-native-vector-icons/MaterialIcons";
 import CalendarPicker from 'react-native-calendar-picker';
 import moment from 'moment';
 
 import Arrows from "../../components/Arrows";
-import Logo from "../../components/Logo";
-import Linhas from "../../components/Linhas";
-import Inputs from "../../components/Inputs";
 import Button from "../../components/Button";
 
 
@@ -26,7 +23,7 @@ import {
   ContainerSeletorData,
   ContainerDataPicker,
   ContainerButton,
-} from "../../global/styles/Pedidos/pedidos";
+} from "../../global/styles/PedidosCalendario/pedidosCalendario";
 
 
 
