@@ -19,8 +19,6 @@ import {
   ArrowBack,
   TitlePage,
   ContainerInicio,
-  ContainerDataInicio,
-  ContainerDataFim,
   ContainerArrow,
   DataTitle,
   DataSelect,
@@ -133,12 +131,6 @@ export default function Login({ navigation }: PropsNavigation) {
             />
           </ContainerButton>
         </ContainerDataPicker>
-
-
-
-
-
-
       </ScrollView>
     </Container>
   );

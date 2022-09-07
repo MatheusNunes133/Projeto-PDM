@@ -33,7 +33,7 @@ export const ContainerDataPicker = styled.View`
   display: flex;
   /* padding-top: 20px; */
   width: 100%;
-  height: 100%;
+  height: 50%;
   background: white;
 `;
 
@@ -61,17 +61,6 @@ export const ContainerSeletorData = styled.View`
     background: #F08E00;
 `;
 
-export const ContainerDataInicio = styled.View`
-    display: flex;
-    flex-direction: column;
-    width: 120px;
-    height: 45px;
-    /* margin-left: 100%; */
-    /* margin-top: 12%; */
-    align-items: flex-start;
-    /* background: black; */
-`;
-
 export const DataSelect = styled.Text`
   color: white;
   font-weight: bold;
@@ -85,17 +74,6 @@ export const DataTitle = styled.Text`
   text-align: center;
 `;
 
-
-
-export const ContainerDataFim = styled.View`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 120px;
-    height: 45px;
-    /* background: red; */
-`;
-
 export const ContainerArrow = styled.View`
     display: flex;
     flex-direction: column;
@@ -106,11 +84,6 @@ export const ContainerArrow = styled.View`
     padding-right: 15px;
     padding-top: 10px;
     /* background: white; */
-`;
-
-export const ContainerInputs = styled.View`
-  display: flex;
-  margin: 0 5% 0 5%;
 `;
 
 export const ContainerButton = styled.View`

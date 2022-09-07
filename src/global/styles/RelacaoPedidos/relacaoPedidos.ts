@@ -136,14 +136,6 @@ export const InfoEntrega = styled.Text`
   margin-top: 6px;
 `;
 
-export const ContainerButtonSeta = styled.View`
-  align-items: flex-end;
-  align-self: center;
-  margin-top: 25%;
-  margin-left: 35%;
-  border-color: #FB9400
-`;
-
 export const ScrollView = styled.ScrollView``;
 
 export const StatusBar = styled.StatusBar``;
@@ -159,86 +151,6 @@ export const ArrowBack = styled.TouchableOpacity`
   /* margin-right: 50%; */
 `;
 
-
-export const InfoPedidos = styled.Text`
-  color: #FFFFFF;
-  width: 326px;
-  height: 141px;
-  font-family: 'Archivo';
-  font-style: normal;
-  font-weight: 600;
-  font-size: 30px;
-  line-height: 34px;
-  margin-left: 5%;
-  margin-top: 5%;
-`;
-
-export const ContainerSeletorData = styled.View`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 327px;
-    height: 45px;
-    margin-left: 7%;
-    margin-top: 12%;
-    background: #F08E00;
-`;
-
-export const ContainerDataInicio = styled.View`
-    display: flex;
-    flex-direction: column;
-    width: 120px;
-    height: 45px;
-    /* margin-left: 100%; */
-    /* margin-top: 12%; */
-    align-items: flex-start;
-    /* background: black; */
-`;
-
-export const DataSelect = styled.Text`
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-`;
-
-export const DataTitle = styled.Text`
-  color: #7A7A80;
-  font-weight: bold;
-  text-align: center;
-`;
-
-export const ContainerDataFim = styled.View`
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 120px;
-    height: 45px;
-    /* background: red; */
-`;
-
-export const ContainerArrow = styled.View`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 120px;
-    height: 45px;
-    padding-right: 15px;
-    padding-top: 10px;
-    /* background: white; */
-`;
-
-export const ContainerInputs = styled.View`
-  display: flex;
-  margin: 0 5% 0 5%;
-`;
-
-export const ContainerButton = styled.View`
-  display: flex;
-  margin: 0 5% 0 5%;
-`;
-
 export const TitlePage = styled.Text`
   color: #1b1b1b;
   padding-left: 21%;
@@ -249,32 +161,3 @@ export const TitlePage = styled.Text`
 `;
 
 
-export const ContainerSenha = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-export const EsqueceuSenha = styled.Text`
-  color: #1b1b1b;
-  text-align: center;
-  margin: 15% 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 18px;
-`;
-
-export const ButtonRecuperar = styled.TouchableOpacity``;
-
-export const RecuperarSenha = styled.Text`
-  color: #fb9400;
-  margin-left: 5%;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
-`;
-
-export const ContainerCadastro = styled.View`
-  display: flex;
-  margin: 0 5% 10% 5%;
-`;
