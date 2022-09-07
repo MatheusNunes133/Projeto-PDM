@@ -89,7 +89,7 @@ export default function Produtos({ navigation, route }: PropsNavigation) {
               >
                 <Icone name="add" size={30} color="#FFF" />
               </ButtonMais>
-              <Preco>{hamburguerPrice}</Preco>
+              <Preco>{`R$ ${hamburguerPrice}`}</Preco>
             </ContainerButtons>
           </ContainerQuantidade>
         </ContainerPedido>

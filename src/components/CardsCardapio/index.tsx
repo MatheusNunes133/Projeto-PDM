@@ -22,7 +22,7 @@ export default function CardsCardapio({
       <CardsInfo>
         <HamburguerType>{hamburguerType}</HamburguerType>
         <HamburguerName>{hamburguerName}</HamburguerName>
-        <HamburguerPrice>{hamburguerPrice}</HamburguerPrice>
+        <HamburguerPrice>{`R$ ${hamburguerPrice}`}</HamburguerPrice>
       </CardsInfo>
     </ContainerCards>
   );
