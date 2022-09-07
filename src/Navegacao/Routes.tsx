@@ -16,6 +16,8 @@ import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
 import Pedidos from "../views/Pedidos";
+import RelacaoPedidos from "../views/RelacaoPedidos";
+
 
 function DrawerNavigation() {
   return (
@@ -123,6 +125,11 @@ function Navegacao() {
         <Stack.Screen
           name="Mensagem"
           component={Mensagem}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="RelacaoPedidos"
+          component={RelacaoPedidos}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

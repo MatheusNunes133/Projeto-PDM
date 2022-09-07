@@ -1,9 +1,10 @@
+import { View } from "react-native";
 import styled from "styled-components/native";
 
 export const Container = styled.View`
   display: flex;
   flex: 1;
-  background-color: #ffffff;
+  background-color: #f9f9fb;
 `;
 
 export const ScrollView = styled.ScrollView``;
@@ -24,9 +25,18 @@ export const ArrowBack = styled.TouchableOpacity`
 export const ContainerInicio = styled.View`
   display: flex;
   width: 100%;
-  height: 280px;
+  height: 210px;
   background: #F08E00;
 `;
+
+export const ContainerDataPicker = styled.View`
+  display: flex;
+  /* padding-top: 20px; */
+  width: 100%;
+  height: 100%;
+  background: white;
+`;
+
 
 export const InfoPedidos = styled.Text`
   color: #FFFFFF;
@@ -48,7 +58,6 @@ export const ContainerSeletorData = styled.View`
     width: 327px;
     height: 45px;
     margin-left: 7%;
-    margin-top: 12%;
     background: #F08E00;
 `;
 
@@ -107,6 +116,7 @@ export const ContainerInputs = styled.View`
 export const ContainerButton = styled.View`
   display: flex;
   margin: 0 5% 0 5%;
+  padding-top: 20px;
 `;
 
 export const TitlePage = styled.Text`
@@ -119,32 +129,3 @@ export const TitlePage = styled.Text`
 `;
 
 
-export const ContainerSenha = styled.View`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-`;
-export const EsqueceuSenha = styled.Text`
-  color: #1b1b1b;
-  text-align: center;
-  margin: 15% 0;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 18px;
-`;
-
-export const ButtonRecuperar = styled.TouchableOpacity``;
-
-export const RecuperarSenha = styled.Text`
-  color: #fb9400;
-  margin-left: 5%;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
-`;
-
-export const ContainerCadastro = styled.View`
-  display: flex;
-  margin: 0 5% 10% 5%;
-`;
