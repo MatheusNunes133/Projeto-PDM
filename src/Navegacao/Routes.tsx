@@ -17,6 +17,10 @@ import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
 import PedidosCalendario from "../views/PedidosCalendario";
 import RelacaoPedidos from "../views/RelacaoPedidos";
+import Produtos from "../views/Produtos";
+import Checkout from "../views/Checkout"
+import Enderecos from "../views/Enderecos";
+import Pedidos from "../views/Pedidos";
 
 
 function DrawerNavigation() {
@@ -48,7 +52,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Sacola"
-        component={Cardapio}
+        component={Checkout}
         options={{
           drawerIcon: () => {
             return <Icone name="shopping" size={15} color="#6A7D8B" />;
@@ -68,7 +72,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Meus Pedidos"
-        component={PedidosCalendario}
+        component={Pedidos}
         options={{
           drawerIcon: () => {
             return <Icone name="playlist-edit" size={15} color="#6A7D8B" />;
@@ -112,6 +116,11 @@ function Navegacao() {
           component={PedidosCalendario}
           options={{ headerShown: true }}
         />
+         <Stack.Screen
+          name="RelacaoPedidos"
+          component={RelacaoPedidos}
+          options={{ headerShown: false }}
+        />
         <Stack.Screen
           name="Cadastro"
           component={Cadastro}
@@ -128,15 +137,29 @@ function Navegacao() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="RelacaoPedidos"
-          component={RelacaoPedidos}
+          name="Produtos"
+          component={Produtos}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Checkout"
+          component={Checkout}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Endereco"
+          component={Enderecos}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Pedidos"
+          component={Pedidos}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
 export default function Routes() {
   return <Navegacao />;
 }

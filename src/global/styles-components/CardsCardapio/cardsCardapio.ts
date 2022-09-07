@@ -2,11 +2,12 @@ import styled from "styled-components/native";
 
 export const ContainerCards = styled.TouchableOpacity`
   display: flex;
+  flex-basis: 50%;
   align-items: center;
   background-color: #fff9f2;
   border-radius: 10px;
-  width: 47%;
-  margin: 0 0 7% 0;
+  width: 90px;
+  margin: 0 0 7% 3%;
 `;
 
 export const CardsImage = styled.Image``;
