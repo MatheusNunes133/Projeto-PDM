@@ -18,9 +18,7 @@ export default function Inicio({ navigation }: PropsNavigation) {
   return (
     <Container>
       <ContainerSuperior>
-        <TitleInicio>
-          B7 • Burger
-        </TitleInicio>
+        <TitleInicio>B7 • Burger</TitleInicio>
         <ContainerImage
           source={require("../../../assets/images/burger-login.png")}
         />
@@ -30,11 +28,19 @@ export default function Inicio({ navigation }: PropsNavigation) {
           O Hamburguer mais delicioso da sua Cidade!
         </TituloInferior>
         <ContainerInfo>
-          <SubTitle>Logou   </SubTitle>
-          <Icone name={"arrow-forward"} size={18} style={{color:"#FB9400"}}></Icone>
-          <SubTitle>   Pediu   </SubTitle>
-          <Icone name={"arrow-forward"} size={18} style={{color:"#FB9400"}}></Icone>
-          <SubTitle>   Chegou</SubTitle>
+          <SubTitle>Logou </SubTitle>
+          <Icone
+            name={"arrow-forward"}
+            size={18}
+            style={{ color: "#FB9400" }}
+          ></Icone>
+          <SubTitle> Pediu </SubTitle>
+          <Icone
+            name={"arrow-forward"}
+            size={18}
+            style={{ color: "#FB9400" }}
+          ></Icone>
+          <SubTitle> Chegou</SubTitle>
         </ContainerInfo>
         <Button
           text="Fazer Login"
@@ -49,10 +55,9 @@ export default function Inicio({ navigation }: PropsNavigation) {
             color="white"
             textColor="#FB9400"
             strokeColor
-            funcao={() => navigation.navigate("Cardapio")}
+            funcao={() => navigation.navigate("CardapioDrawer")}
           />
         </ContainerButtonCardapio>
-
       </ContainerButton>
     </Container>
   );
