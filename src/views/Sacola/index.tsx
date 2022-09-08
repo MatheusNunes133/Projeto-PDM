@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from "react-native";
 import Arrows from "../../components/Arrows";
 import Burger from "../../components/Sacola/Burger";
 import ValorTotal from "../../components/Sacola/ValorTotal";
-
 
 import {
   Container,
@@ -19,7 +18,7 @@ import {
   Button,
   TextButton,
   TitleFrete,
-  ContainerInfo
+  ContainerInfo,
 } from "../../global/styles/Sacola/sacola";
 
 const styles = StyleSheet.create({
@@ -45,8 +44,8 @@ const styles = StyleSheet.create({
     color: "#6A7D8B",
     marginLeft: 20,
     marginTop: 30,
-    alignSelf: "flex-start"
-  }
+    alignSelf: "flex-start",
+  },
 });
 
 export default function Inicio({ navigation }: PropsNavigation) {
@@ -54,7 +53,7 @@ export default function Inicio({ navigation }: PropsNavigation) {
     <Container>
       <ScrollView>
         <Header>
-          <ArrowBack onPress={() => navigation.goBack()}>
+          <ArrowBack onPress={() => navigation.navigate("Cardapio")}>
             <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
           </ArrowBack>
           <TitlePage>Sacola</TitlePage>
@@ -64,18 +63,38 @@ export default function Inicio({ navigation }: PropsNavigation) {
         </ContainerItemCount>
 
         <ContainerSacolaPrincipal>
-            <Burger
-              item={{ image: "Name", subname: "Tradicional", name: "Teste", preco: "R$ 30,00" }}
-            />
-            <Burger
-              item={{ image: "Name", subname: "Tradicional", name: "Teste", preco: "R$ 30,00" }}
-            />
-            <Burger
-              item={{ image: "Name", subname: "Tradicional", name: "Teste", preco: "R$ 30,00" }}
-            />
-            <Burger
-              item={{ image: "Name", subname: "Tradicional", name: "Teste", preco: "R$ 30,00" }}
-            />
+          <Burger
+            item={{
+              image: "Name",
+              subname: "Tradicional",
+              name: "Teste",
+              preco: "R$ 30,00",
+            }}
+          />
+          <Burger
+            item={{
+              image: "Name",
+              subname: "Tradicional",
+              name: "Teste",
+              preco: "R$ 30,00",
+            }}
+          />
+          <Burger
+            item={{
+              image: "Name",
+              subname: "Tradicional",
+              name: "Teste",
+              preco: "R$ 30,00",
+            }}
+          />
+          <Burger
+            item={{
+              image: "Name",
+              subname: "Tradicional",
+              name: "Teste",
+              preco: "R$ 30,00",
+            }}
+          />
 
           <TitleFrete>Calcular frete e prazo</TitleFrete>
           <ContainerFrete>
@@ -86,23 +105,19 @@ export default function Inicio({ navigation }: PropsNavigation) {
           </ContainerFrete>
 
           <ContainerInfo>
-            <Text style={styles.text3}>Rua das Flores - Jardins da Serra - Campina Pequena</Text>
-            <View style={{display: "flex", flexDirection: "row", marginTop: 20}}>
-            <Text style={styles.text1} >Receba em até 20 minutos</Text>
-            <Text style={styles.text2} >R$ 12,50</Text>
+            <Text style={styles.text3}>
+              Rua das Flores - Jardins da Serra - Campina Pequena
+            </Text>
+            <View
+              style={{ display: "flex", flexDirection: "row", marginTop: 20 }}
+            >
+              <Text style={styles.text1}>Receba em até 20 minutos</Text>
+              <Text style={styles.text2}>R$ 12,50</Text>
             </View>
-            
           </ContainerInfo>
 
-          <ValorTotal
-              subtotal={"54,00"}
-              frete={"5,00"}
-              total={"59,00"}
-            />
-
+          <ValorTotal subtotal={"54,00"} frete={"5,00"} total={"59,00"} />
         </ContainerSacolaPrincipal>
-
-
       </ScrollView>
     </Container>
   );

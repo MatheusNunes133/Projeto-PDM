@@ -16,7 +16,6 @@ export const TitlePage = styled.Text`
   font-weight: bold;
   line-height: 29px;
   /* margin: 0% 0 5% 0; */
-  
 `;
 
 export const Header = styled.View`
@@ -37,24 +36,24 @@ export const ContainerInfo = styled.View`
   width: 373px;
   height: 94px;
   flex-direction: column;
-  background-color: #F9F9FA;
+  background-color: #f9f9fa;
 `;
 
 export const Input = styled.TextInput`
-  width: 310px;
+  width: 250px;
   height: 56px;
   background-color: white;
-  border: 2px solid #FB9400;
+  border: 2px solid #fb9400;
   padding: 0 5%;
   margin-bottom: 30px;
   border-radius: 5px;
 `;
 export const TitleFrete = styled.Text`
-  color: #6A7D8B;
+  color: #6a7d8b;
   margin-top: 22px;
 `;
 export const TextButton = styled.Text`
-  color: #6A7D8B;
+  color: #6a7d8b;
 `;
 export const Button = styled.TouchableOpacity`
   display: flex;
@@ -64,7 +63,7 @@ export const Button = styled.TouchableOpacity`
   width: 56px;
   height: 56px;
   margin-left: 14px;
-  border: 2px solid #FB9400;
+  border: 2px solid #fb9400;
   border-radius: 5px;
 `;
 
@@ -100,6 +99,5 @@ export const InfoCount = styled.Text`
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #1B1B1B;
+  color: #1b1b1b;
 `;
-

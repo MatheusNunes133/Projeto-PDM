@@ -8,7 +8,7 @@ export default function Topo(props) {
       <TouchableOpacity
         style={styles.seta}
         onPress={() => {
-          props.navegacao.goBack();
+          props.navegacao.navigate("Cardapio");
         }}
       >
         <Image source={Seta} />

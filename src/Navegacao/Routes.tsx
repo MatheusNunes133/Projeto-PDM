@@ -1,4 +1,4 @@
-import * as React from 'react';
+import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -21,15 +21,16 @@ import Sacola from "../views/Sacola";
 import PedidosCalendario from "../views/PedidosCalendario";
 import RelacaoPedidos from "../views/RelacaoPedidos";
 import Produtos from "../views/Produtos";
-import Checkout from "../views/Checkout"
+import Checkout from "../views/Checkout";
 import Enderecos from "../views/Enderecos";
 import Pedidos from "../views/Pedidos";
+import Detalhes from "../views/Detalhes";
 
 function DrawerNavigation() {
   return (
     <Drawer.Navigator
       useLegacyImplementation={true}
-      initialRouteName="Inicio"
+      initialRouteName="Cardapio"
       drawerContent={(props) => {
         return <CustomDrawer {...props} />;
       }}
@@ -41,26 +42,6 @@ function DrawerNavigation() {
         drawerInactiveTintColor: "#6A7D8B",
       }}
     >
-      <Drawer.Screen
-        name="Inicio"
-        component={Inicio}
-        options={{
-          drawerIcon: () => {
-            return (
-              <Icone name="home" size={15} color="#6A7D8B" />
-            );
-          },
-        }}
-      />
-      <Drawer.Screen
-        name="Sacola"
-        component={Checkout}
-        options={{
-          drawerIcon: () => {
-            return <Icone name="shopping" size={15} color="#6A7D8B" />;
-          },
-        }}
-      />
       <Drawer.Screen
         name="Sacola"
         component={Sacola}
@@ -84,7 +65,9 @@ function DrawerNavigation() {
         component={Cardapio}
         options={{
           drawerIcon: () => {
-            return <Icone name="silverware-fork-knife" size={15} color="#6A7D8B" />;
+            return (
+              <Icone name="silverware-fork-knife" size={15} color="#6A7D8B" />
+            );
           },
         }}
       />
@@ -126,7 +109,7 @@ function Navegacao() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen">
         <Stack.Screen
-          name="Cardapio"
+          name="CardapioDrawer"
           component={DrawerNavigation}
           options={{ headerShown: false }}
         />
@@ -140,7 +123,7 @@ function Navegacao() {
           component={Login}
           options={{ headerShown: false }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="Inicio"
           component={Inicio}
           options={{ headerShown: false }}
@@ -150,7 +133,7 @@ function Navegacao() {
           component={PedidosCalendario}
           options={{ headerShown: true }}
         />
-         <Stack.Screen
+        <Stack.Screen
           name="RelacaoPedidos"
           component={RelacaoPedidos}
           options={{ headerShown: false }}
@@ -190,6 +173,11 @@ function Navegacao() {
           component={Pedidos}
           options={{ headerShown: false }}
         />
+        {/*         <Stack.Screen
+          name="Detalhes"
+          component={Detalhes}
+          options={{ headerShown: false }}
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );

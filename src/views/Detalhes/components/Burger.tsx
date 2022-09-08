@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
-import burger from "../../../assets/images/img-Texas-Burger.png";
+import seta from "../../../assets/images/burger.png";
 
 export default function Burger({ item: { image, subname, name, preco } }) {
-  const [numPedidos, setNumPedidos] = useState(0);
-
   return (
     <View style={styles.container}>
-      <Image source={burger} style={styles.imagem} />
+      <Image source={seta} style={styles.imagem} />
 
       <View>
         <Text style={styles.subname}>{subname}</Text>
@@ -16,31 +14,11 @@ export default function Burger({ item: { image, subname, name, preco } }) {
       </View>
 
       <View style={styles.quantItens}>
-        <TouchableOpacity
-          style={styles.quantItens1}
-          onPress={() => {
-            if (numPedidos < 1) {
-              setNumPedidos(0);
-            } else {
-              setNumPedidos(numPedidos - 1);
-            }
-          }}
-        >
-          <Text style={styles.subtracao}>-</Text>
-        </TouchableOpacity>
+        <Text style={styles.quantItensText}>Qnt.</Text>
 
-        <View style={styles.quantItens2}>
-          <Text style={styles.number}>{numPedidos}</Text>
+        <View style={styles.quantItensNumber}>
+          <Text style={styles.number}>01</Text>
         </View>
-
-        <TouchableOpacity
-          style={styles.quantItens3}
-          onPress={() => {
-            setNumPedidos(numPedidos + 1);
-          }}
-        >
-          <Text style={styles.adicao}>+</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -76,34 +54,26 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   quantItens: {
-    width: 123,
-    height: 42,
-    display: "flex",
-    flexDirection: "row",
+    flexDirection: "column",
     position: "absolute",
     right: 0,
   },
-  quantItens1: {
-    backgroundColor: "#f2f4f5",
-    flex: 1,
+  quantItensText: {
+    fontSize: 12,
+    color: "#fb9400",
+    fontWeight: "bold",
+    marginBottom: 3,
+  },
+  quantItensNumber: {
     alignItems: "center",
     justifyContent: "center",
-    borderBottomLeftRadius: 4,
-    borderTopLeftRadius: 4,
+    borderRadius: 4,
+    borderWidth: 1,
+    width: 42,
+    height: 42,
+    borderColor: "#f2f4f5",
   },
-  quantItens2: {
-    width: 40,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  quantItens3: {
-    backgroundColor: "#fb9400",
-    alignItems: "center",
-    justifyContent: "center",
-    flex: 1,
-    borderBottomRightRadius: 4,
-    borderTopRightRadius: 4,
-  },
+
   adicao: {
     color: "white",
     fontSize: 16,

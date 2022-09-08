@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Image, Text, StyleSheet } from "react-native";
+import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import seta from "../../../../assets/images/seta.png";
 
 export default function Pedido({ item: { nome, descricao, total, image } }) {
@@ -22,9 +22,9 @@ export default function Pedido({ item: { nome, descricao, total, image } }) {
           <Text style={styles.preco}>R$ {total} </Text>
         </View>
 
-        <View style={styles.botao}>
+        <TouchableOpacity style={styles.botao} >
           <Image source={seta} />
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
