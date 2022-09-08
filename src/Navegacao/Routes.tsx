@@ -17,7 +17,7 @@ import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
 import Pedidos from "../views/Pedidos";
 import RelacaoPedidos from "../views/RelacaoPedidos";
-
+import Pedido from "../views/Pedido";
 
 function DrawerNavigation() {
   return (
@@ -74,6 +74,11 @@ function DrawerNavigation() {
             return <Icone name="playlist-edit" size={15} color="#6A7D8B" />;
           },
         }}
+      />
+      <Stack.Screen
+        name="Pedido"
+        component={Pedido}
+        options={{ headerShown: false }}
       />
       <Drawer.Screen
         name="Configurações"

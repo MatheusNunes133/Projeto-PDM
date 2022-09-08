@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { StyleSheet, View } from 'react-native';
-
+import Pedido from '../Pedido/index'
 import Arrows from "../../components/Arrows";
 import ButtonIcon from "../../components/ButtonIcon";
 
@@ -71,7 +71,8 @@ export default function RelacaoPedidos({ navigation }: PropsNavigation) {
                 marginLeft={90}
                 marginRight={0}
                 marginBottom={20}
-              />
+                funcao={() => navigation.navigate("Pedido")}
+               />
 
             </ContainerDescricao2>
           </ContainerMenor>
@@ -95,6 +96,7 @@ export default function RelacaoPedidos({ navigation }: PropsNavigation) {
                 marginLeft={90}
                 marginRight={0}
                 marginBottom={20}
+                funcao={() => navigation.navigate("Pedido")}
               />
 
             </ContainerDescricao2>
@@ -119,6 +121,7 @@ export default function RelacaoPedidos({ navigation }: PropsNavigation) {
                 marginLeft={90}
                 marginRight={0}
                 marginBottom={20}
+                funcao={() => navigation.navigate("Pedido")}
               />
 
             </ContainerDescricao2>
@@ -143,6 +146,7 @@ export default function RelacaoPedidos({ navigation }: PropsNavigation) {
                 marginLeft={90}
                 marginRight={0}
                 marginBottom={20}
+              funcao={() => navigation.navigate("Pedido")}
               />
 
             </ContainerDescricao2>
