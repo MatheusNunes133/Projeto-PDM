@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createDrawerNavigator } from "@react-navigation/drawer";
@@ -16,12 +16,22 @@ import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
 import Perfil from "../views/Perfil";
+import Inicio from "../views/Inicio";
+import Mapas from "../views/Mapa";
+import Sacola from "../views/Sacola";
+import PedidosCalendario from "../views/PedidosCalendario";
+import RelacaoPedidos from "../views/RelacaoPedidos";
+import Produtos from "../views/Produtos";
+import Checkout from "../views/Checkout";
+import Enderecos from "../views/Enderecos";
+import Pedidos from "../views/Pedidos";
+import Detalhes from "../views/Detalhes";
 
 function DrawerNavigation() {
   return (
     <Drawer.Navigator
       useLegacyImplementation={true}
-      initialRouteName="Menu"
+      initialRouteName="Cardapio"
       drawerContent={(props) => {
         return <CustomDrawer {...props} />;
       }}
@@ -34,22 +44,31 @@ function DrawerNavigation() {
       }}
     >
       <Drawer.Screen
-        name="Cardápio"
+        name="Sacola"
+        component={Sacola}
+        options={{
+          drawerIcon: () => {
+            return <Icone name="shopping" size={15} color="#6A7D8B" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Mapa"
+        component={Mapas}
+        options={{
+          drawerIcon: () => {
+            return <Icone name="map" size={15} color="#6A7D8B" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Cardapio"
         component={Cardapio}
         options={{
           drawerIcon: () => {
             return (
               <Icone name="silverware-fork-knife" size={15} color="#6A7D8B" />
             );
-          },
-        }}
-      />
-      <Drawer.Screen
-        name="Sacola"
-        component={Cardapio}
-        options={{
-          drawerIcon: () => {
-            return <Icone name="shopping" size={15} color="#6A7D8B" />;
           },
         }}
       />
@@ -66,7 +85,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Meus Pedidos"
-        component={Cardapio}
+        component={Pedidos}
         options={{
           drawerIcon: () => {
             return <Icone name="playlist-edit" size={15} color="#6A7D8B" />;
@@ -100,7 +119,7 @@ function Navegacao() {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="SplashScreen">
         <Stack.Screen
-          name="Cardapio"
+          name="CardapioDrawer"
           component={DrawerNavigation}
           options={{ headerShown: false }}
         />
@@ -112,6 +131,21 @@ function Navegacao() {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Inicio"
+          component={Inicio}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="PedidosCalendario"
+          component={PedidosCalendario}
+          options={{ headerShown: true }}
+        />
+        <Stack.Screen
+          name="RelacaoPedidos"
+          component={RelacaoPedidos}
           options={{ headerShown: false }}
         />
         <Stack.Screen
@@ -129,11 +163,35 @@ function Navegacao() {
           component={Mensagem}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="Produtos"
+          component={Produtos}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Checkout"
+          component={Checkout}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Endereco"
+          component={Enderecos}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Pedidos"
+          component={Pedidos}
+          options={{ headerShown: false }}
+        />
+        {/*         <Stack.Screen
+          name="Detalhes"
+          component={Detalhes}
+          options={{ headerShown: false }}
+        /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
 export default function Routes() {
   return <Navegacao />;
 }
