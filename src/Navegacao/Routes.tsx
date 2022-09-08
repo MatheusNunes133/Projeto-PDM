@@ -15,6 +15,9 @@ import Mensagem from "../views/Mensagem";
 import SplashScreen from "../views/SpashScreen";
 import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
+import Inicio from "../views/Inicio";
+import Mapas from "../views/Mapa";
+import Sacola from "../views/Sacola";
 import PedidosCalendario from "../views/PedidosCalendario";
 import RelacaoPedidos from "../views/RelacaoPedidos";
 import Produtos from "../views/Produtos";
@@ -22,12 +25,11 @@ import Checkout from "../views/Checkout"
 import Enderecos from "../views/Enderecos";
 import Pedidos from "../views/Pedidos";
 
-
 function DrawerNavigation() {
   return (
     <Drawer.Navigator
       useLegacyImplementation={true}
-      initialRouteName="Menu"
+      initialRouteName="Inicio"
       drawerContent={(props) => {
         return <CustomDrawer {...props} />;
       }}
@@ -40,12 +42,12 @@ function DrawerNavigation() {
       }}
     >
       <Drawer.Screen
-        name="Cardápio"
-        component={Cardapio}
+        name="Inicio"
+        component={Inicio}
         options={{
           drawerIcon: () => {
             return (
-              <Icone name="silverware-fork-knife" size={15} color="#6A7D8B" />
+              <Icone name="home" size={15} color="#6A7D8B" />
             );
           },
         }}
@@ -56,6 +58,33 @@ function DrawerNavigation() {
         options={{
           drawerIcon: () => {
             return <Icone name="shopping" size={15} color="#6A7D8B" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Sacola"
+        component={Sacola}
+        options={{
+          drawerIcon: () => {
+            return <Icone name="shopping" size={15} color="#6A7D8B" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Mapa"
+        component={Mapas}
+        options={{
+          drawerIcon: () => {
+            return <Icone name="map" size={15} color="#6A7D8B" />;
+          },
+        }}
+      />
+      <Drawer.Screen
+        name="Cardapio"
+        component={Cardapio}
+        options={{
+          drawerIcon: () => {
+            return <Icone name="silverware-fork-knife" size={15} color="#6A7D8B" />;
           },
         }}
       />
@@ -109,6 +138,11 @@ function Navegacao() {
         <Stack.Screen
           name="Login"
           component={Login}
+          options={{ headerShown: false }}
+        />
+         <Stack.Screen
+          name="Inicio"
+          component={Inicio}
           options={{ headerShown: false }}
         />
         <Stack.Screen

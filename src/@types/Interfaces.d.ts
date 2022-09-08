@@ -14,6 +14,11 @@ export declare global {
     color?: string;
   }
 
+  interface PropsMaps {
+    width: number;
+    height: number;
+  }
+
   interface PropsButton {
     color: string;
     textColor: string;
