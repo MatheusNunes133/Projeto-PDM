@@ -28,25 +28,6 @@ export const ArrowBack = styled.TouchableOpacity`
   /* margin-right: 50%; */
 `;
 
-export const ContainerLogo = styled.View`
-  display: flex;
-  margin-top: 25%;
-`;
-
-export const InfoLogin = styled.Text`
-  color: rgba(27, 27, 27, 0.8);
-  margin-top: 40px;
-  text-align: center;
-  width: 60%;
-  font-size: 18px;
-  font-weight: 400;
-  line-height: 21px;
-`;
-
-export const ContainerInputs = styled.View`
-  display: flex;
-  margin: 0 5% 0 5%;
-`;
 
 export const ContainerButton = styled.View`
   /* display: flex; */
@@ -56,17 +37,3 @@ export const ContainerButton = styled.View`
   top: 90%;
 `;
 
-export const ButtonRecuperar = styled.TouchableOpacity``;
-
-export const RecuperarSenha = styled.Text`
-  color: #fb9400;
-  margin-left: 5%;
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 19px;
-`;
-
-export const ContainerCadastro = styled.View`
-  display: flex;
-  margin: 0 5% 10% 5%;
-`;

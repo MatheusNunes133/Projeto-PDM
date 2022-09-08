@@ -6,15 +6,6 @@ export const Container = styled.View`
   background-color: #ffffff;
 `;
 
-export const ScrollView = styled.ScrollView``;
-
-export const StatusBar = styled.StatusBar``;
-
-export const Header = styled.View`
-  display: flex;
-  align-items: center;
-  margin: 15% 5% 0 5%;
-`;
 
 export const ArrowBack = styled.TouchableOpacity`
   align-self: flex-start;
@@ -36,11 +27,6 @@ export const ContainerImage = styled.Image`
   margin-left: 23%;
   width: 220px;
   height: 220px;
-`;
-
-export const ContainerInputs = styled.View`
-  display: flex;
-  margin: 0 5% 0 5%;
 `;
 
 export const ContainerButton = styled.View`
@@ -70,7 +56,6 @@ export const TituloInferior = styled.Text`
   line-height: 42px;
 `;
 
-export const ButtonRecuperar = styled.TouchableOpacity``;
 
 export const SubTitle = styled.Text`
   color: black;

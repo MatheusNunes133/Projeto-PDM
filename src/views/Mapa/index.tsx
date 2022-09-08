@@ -1,10 +1,8 @@
-import React, { Component, useState } from "react";
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
+import React, { useState } from "react";
+import { StyleSheet, Dimensions } from 'react-native';
 import MapView, { Marker } from "react-native-maps";
 import Arrows from "../../components/Arrows";
-import Logo from "../../components/Logo";
-import Linhas from "../../components/Linhas";
-import Inputs from "../../components/Inputs";
+
 import Button from "../../components/Button";
 
 import {
@@ -12,13 +10,8 @@ import {
   Header,
   ArrowBack,
   TitlePage,
-  ContainerLogo,
-  InfoLogin,
-  ContainerInputs,
   ContainerButton,
-  ButtonRecuperar,
-  RecuperarSenha,
-  ContainerCadastro,
+
 } from "../../global/styles/Mapa/mapa";
 
 const styles = StyleSheet.create({
@@ -27,9 +20,6 @@ const styles = StyleSheet.create({
     height: Dimensions.get('window').height,
   },
 });
-
-
-
 
 export default function Mapa({ navigation }: PropsNavigation) {
   const [region, setRegion] = useState({

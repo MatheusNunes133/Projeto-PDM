@@ -1,15 +1,10 @@
 import React from "react";
 import Icone from "react-native-vector-icons/MaterialIcons";
-import Arrows from "../../components/Arrows";
-import Logo from "../../components/Logo";
 import Button from "../../components/Button";
 
 import {
   Container,
   ContainerSuperior,
-  ScrollView,
-  StatusBar,
-  ArrowBack,
   TituloInferior,
   SubTitle,
   ContainerInfo,
@@ -18,13 +13,6 @@ import {
   TitleInicio,
   ContainerButtonCardapio,
 } from "../../global/styles/Inicio/inicio";
-
-import { Header, ImageMessage } from "../../global/styles/Mensagem/mensagem";
-
-import {
-  TitlePage,
-  InfoLogin,
-} from "../../global/styles/EsqueceuASenha/esqueceuASenha";
 
 export default function Inicio({ navigation }: PropsNavigation) {
   return (

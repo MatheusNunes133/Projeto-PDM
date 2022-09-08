@@ -17,6 +17,7 @@ import Cardapio from "../views/Cardapio";
 import CustomDrawer from "../components/CustomDrawer";
 import Inicio from "../views/Inicio";
 import Mapas from "../views/Mapa";
+import Sacola from "../views/Sacola";
 
 function DrawerNavigation() {
   return (
@@ -47,7 +48,7 @@ function DrawerNavigation() {
       />
       <Drawer.Screen
         name="Sacola"
-        component={Cardapio}
+        component={Sacola}
         options={{
           drawerIcon: () => {
             return <Icone name="shopping" size={15} color="#6A7D8B" />;
