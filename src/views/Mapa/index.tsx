@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 import Arrows from "../../components/Arrows";
 
@@ -11,13 +11,12 @@ import {
   ArrowBack,
   TitlePage,
   ContainerButton,
-
 } from "../../global/styles/Mapa/mapa";
 
 const styles = StyleSheet.create({
   mapStyle: {
-    width: Dimensions.get('window').width,
-    height: Dimensions.get('window').height,
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
   },
 });
 
@@ -32,12 +31,12 @@ export default function Mapa({ navigation }: PropsNavigation) {
   return (
     <Container>
       <Header>
-        <ArrowBack onPress={() => navigation.goBack()}>
+        <ArrowBack onPress={() => navigation.navigate("Cardapio")}>
           <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
         </ArrowBack>
         <TitlePage>Novo Endereço</TitlePage>
       </Header>
- 
+
       <MapView
         style={styles.mapStyle}
         initialRegion={{
@@ -52,12 +51,17 @@ export default function Mapa({ navigation }: PropsNavigation) {
             latitude: e.nativeEvent.coordinate.latitude,
             longitude: e.nativeEvent.coordinate.longitude,
             latitudeDelta: 0.009,
-            longitudeDelta: 0.009
-          }
+            longitudeDelta: 0.009,
+          };
           setRegion(regiao);
         }}
       >
-        <Marker coordinate={{ latitude: region.latitude, longitude: region.longitude }} />
+        <Marker
+          coordinate={{
+            latitude: region.latitude,
+            longitude: region.longitude,
+          }}
+        />
       </MapView>
 
       <ContainerButton>
@@ -70,6 +74,5 @@ export default function Mapa({ navigation }: PropsNavigation) {
         />
       </ContainerButton>
     </Container>
-
   );
 }
