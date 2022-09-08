@@ -20,7 +20,7 @@ export default function Perfil({ navigation }: PropsNavigation) {
     <Container>
       <ScrollView>
         <ContainerIcon>
-        <Icone name="arrow-left" size={30} color="#FB9400" />
+        <Icone name="arrow-left" size={30} color="#FB9400"  onPress={() => navigation.goBack()}/>
         </ContainerIcon>
         <Header>
         <Title>Perfil</Title>
