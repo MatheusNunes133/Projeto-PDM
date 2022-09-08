@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
-import { BackHandler } from "react-native";
+import React, { useEffect, useState } from "react";
+import { BackHandler, FlatList, StyleSheet } from "react-native";
+import api from "../../../Api";
 
 import Icone from "react-native-vector-icons/MaterialIcons";
 
@@ -30,12 +31,53 @@ import {
   BackgroundBurguer,
   ContainerCardapio,
 } from "../../global/styles/Cardapio/cardapio";
-export default function Cardapio({ navigation }: PropsNavigation) {
+export default function Cardapio({ navigation, route }: PropsNavigation) {
   useEffect(() => {
     BackHandler.addEventListener("hardwareBackPress", () => {
       return true;
     });
-  });
+  }, []);
+
+  const [listItems, setItem] = useState([]);
+
+  useEffect(() => {
+    async function teste() {
+      try {
+        let resp = await api.get("/itens");
+        setItem(resp.data);
+        //setItem(resp.data);
+      } catch (erro) {
+        console.log(erro);
+      }
+    }
+    teste();
+  }, []);
+  console.log(listItems);
+
+  function renderItens({ item }) {
+    if (item.valorUnitario != 0) {
+      return (
+        <CardsCardapio
+          hamburguerName={item.nome}
+          hamburguerPrice={item.valorUnitario}
+          hamburguerType="Tradicional"
+          image={require("/home/matheus/Área de Trabalho/Análise e Desenvolvimento de Sistemas/PDM/B7/assets/images/img-Texas-Burger.png")}
+          funcao={() =>
+            navigation.navigate("Produtos", {
+              paramKey: {
+                hamburguerName: item.nome,
+                hamburguerType: "Tradicional",
+                image: require("/home/matheus/Área de Trabalho/Análise e Desenvolvimento de Sistemas/PDM/B7/assets/images/img-Texas-Burger.png"),
+                hamburguerPrice: item.valorUnitario,
+                desc: item.ingredientes,
+              },
+            })
+          }
+        />
+      );
+    }
+  }
+
   return (
     <Container>
       <Header>
@@ -57,67 +99,42 @@ export default function Cardapio({ navigation }: PropsNavigation) {
         </SearchButton>
         <SearchInput placeholder="Digite o nome do Burger" />
       </Search>
-      <ScrollView>
-        <BurguerPromotion>
-          <InfoPromotion>
-            <PromotionTag>
-              <TextPromotion>Promoção</TextPromotion>
-            </PromotionTag>
-            <BurguerName>Dose Dupla.</BurguerName>
-            <SubTitlePromotion>2 Old Burger por apenas:</SubTitlePromotion>
-            <BurguerPromotionPrice>R$ 35,50</BurguerPromotionPrice>
-          </InfoPromotion>
-          <ContainerBurguerImage>
-            <ContainerBurguer>
-              <BurguerImageDown
-                source={require("../../../assets/images/img-OldBurger.png")}
-              />
-              <BurguerImageUp
-                source={require("../../../assets/images/img-OldBurger.png")}
-              />
-            </ContainerBurguer>
-          </ContainerBurguerImage>
-          <BackgroundBurguer />
-        </BurguerPromotion>
-        <ContainerCardapio>
-          <CardsCardapio
-            image={require("../../../assets/images/img-Texas-Burger.png")}
-            hamburguerType="Tradicional"
-            hamburguerName="Texas Bruguer"
-            hamburguerPrice="R$ 25,50"
-            funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
-            }}
-          />
-          <CardsCardapio
-            image={require("../../../assets/images/img-Golden-Burger.png")}
-            hamburguerType="Tradicional"
-            hamburguerName="Golden Burger"
-            hamburguerPrice="R$ 25,50"
-            funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
-            }}
-          />
-          <CardsCardapio
-            image={require("../../../assets/images/img-Monster-Burger.png")}
-            hamburguerType="Tradicional"
-            hamburguerName="Monster Burger"
-            hamburguerPrice="R$ 25,50"
-            funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
-            }}
-          />
-          <CardsCardapio
-            image={require("../../../assets/images/img-OldBurger.png")}
-            hamburguerType="Tradicional"
-            hamburguerName="Old Burger"
-            hamburguerPrice="R$ 25,50"
-            funcao={() => {
-              alert("Enviar dados desse componente para outra pagina");
-            }}
-          />
-        </ContainerCardapio>
-      </ScrollView>
+      <BurguerPromotion>
+        <InfoPromotion>
+          <PromotionTag>
+            <TextPromotion>Promoção</TextPromotion>
+          </PromotionTag>
+          <BurguerName>Dose Dupla.</BurguerName>
+          <SubTitlePromotion>2 Old Burger por apenas:</SubTitlePromotion>
+          <BurguerPromotionPrice>R$ 35,50</BurguerPromotionPrice>
+        </InfoPromotion>
+        <ContainerBurguerImage>
+          <ContainerBurguer>
+            <BurguerImageDown
+              source={require("../../../assets/images/img-OldBurger.png")}
+            />
+            <BurguerImageUp
+              source={require("../../../assets/images/img-OldBurger.png")}
+            />
+          </ContainerBurguer>
+        </ContainerBurguerImage>
+        <BackgroundBurguer />
+      </BurguerPromotion>
+      <FlatList
+        data={listItems}
+        renderItem={renderItens}
+        keyExtractor={(item) => item.id}
+        style={styles.itens}
+        showsVerticalScrollIndicator={false}
+        numColumns={2}
+      />
     </Container>
   );
 }
+
+const styles = StyleSheet.create({
+  itens: {
+    display: "flex",
+    marginHorizontal: 10,
+  },
+});
