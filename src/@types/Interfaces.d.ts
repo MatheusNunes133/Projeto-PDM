@@ -41,6 +41,8 @@ export declare global {
   interface PropsInputs {
     placeholder: string;
     secure?: boolean;
+    onChangeText?: Function;
+    maxLength?: number;
   }
 
   interface PropsCardsCardapio {
