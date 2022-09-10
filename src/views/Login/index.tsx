@@ -64,10 +64,9 @@ export default function Login({ navigation }: PropsNavigation) {
               })
               .then((resposta)=>{
               if(resposta.status == 200){
-                AsyncStorage.setItem(`${email}->Token`, resposta.data)
-                navigation.navigate("CardapioDrawer",{paramKeys:{
-                  email:email
-                }})
+                AsyncStorage.setItem(`Token`, resposta.data)
+                AsyncStorage.setItem("emailUser", email)
+                navigation.navigate("CardapioDrawer")
               }
               }).catch(erro=>{
                 alert("Erro ao fazer Login")
