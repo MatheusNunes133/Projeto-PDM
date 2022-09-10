@@ -11,6 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
+    "plugins": ["expo-image-picker"],
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -24,6 +25,7 @@
         "backgroundColor": "#FFFFFF"
       }
     },
+
     "web": {
       "favicon": "./assets/favicon.png"
     }

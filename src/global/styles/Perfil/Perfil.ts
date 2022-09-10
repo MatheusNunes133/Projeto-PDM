@@ -16,7 +16,10 @@ export const Container = styled.View`
   flex: 1;
   background-color: #ffffff;
 `;
-
+export const Box = styled.View`
+  width: 100%;
+  height: 10px;
+`;
 export const ScrollView = styled.ScrollView``;
 export const ContainerInputs = styled.View`
   display: flex;
