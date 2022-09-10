@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Icone from "react-native-vector-icons/MaterialIcons";
-
+import AsyncStorage from '@react-native-async-storage/async-storage'
 import Arrows from "../../components/Arrows";
 import Button from "../../components/Button";
 
@@ -36,6 +36,16 @@ export default function Produtos({ navigation, route }: PropsNavigation) {
     route.params.paramKey;
 
   const [quantidade, setQuantidade] = useState(0);
+
+async function addSacola(){
+  let result = []
+  result.push({name: hamburguerName,preco: hamburguerPrice,subname: hamburguerType, quantidade: quantidade})
+
+  AsyncStorage.setItem("Sacola", JSON.stringify(result))
+  
+  console.log(await AsyncStorage.getItem("Sacola"))
+
+}
 
   return (
     <Container>
@@ -99,9 +109,7 @@ export default function Produtos({ navigation, route }: PropsNavigation) {
             text="Adicionar à sacola"
             textColor="#FFF"
             strokeColor
-            funcao={() => {
-              alert("Adiciona a sacola");
-            }}
+            funcao={addSacola}
           />
         </ContainerButton>
       </ScrollView>

@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useState} from "react";
+
 
 import {
   ArrowBack,
@@ -21,8 +22,17 @@ import Arrows from "../../components/Arrows";
 import Linhas from "../../components/Linhas";
 import Inputs from "../../components/Inputs";
 import Button from "../../components/Button";
+import api from "../../../Api";
 
 export default function Cadastro({ navigation }: PropsNavigation) {
+
+const [nome, setNome] = useState("")
+const [email, setEmail] = useState("")
+const [senha, setSenha] = useState("")
+const [CPF, setCPF] = useState("")
+const [telefone, setTelefone] = useState("")
+const [dataNasc, setDataNasc] = useState("")
+
   return (
     <Container>
       <ScrollView>
@@ -38,9 +48,24 @@ export default function Cadastro({ navigation }: PropsNavigation) {
         </Header>
         <Linhas />
         <ContainerInputs>
-          <Inputs placeholder="Digite seu nome" />
-          <Inputs placeholder="Digite seu e-mail" />
-          <Inputs placeholder="Digite sua senha" secure />
+          <Inputs placeholder="Digite seu nome" onChangeText={(text)=>{
+            setNome(text)
+          }}/>
+          <Inputs placeholder="Digite seu e-mail" onChangeText={(text)=>{
+            setEmail(text)
+          }}/>
+          <Inputs placeholder="Digite sua senha" secure onChangeText={(text)=>{
+            setSenha(text)
+          }}/>
+          <Inputs placeholder="Digite seu CPF" maxLength={14} onChangeText={(text)=>{
+            setCPF(text)
+          }}/>
+          <Inputs placeholder="Digite sua data de nascimento (AAAA-MM-DD)"  maxLength={10} onChangeText={(text)=>{
+            setDataNasc(text)
+          }}/>
+          <Inputs placeholder="Digite seu telefone" maxLength={11} onChangeText={(text)=>{
+            setTelefone(text)
+          }}/>
         </ContainerInputs>
         <ContainerButton>
           <Button
@@ -48,6 +73,21 @@ export default function Cadastro({ navigation }: PropsNavigation) {
             color="#FB9400"
             textColor="#fff"
             strokeColor
+            funcao={async ()=>{
+              let resposta = await api.post("/clientes",{
+                nome: nome,
+                email: email,
+                senha: senha,
+                cpf: CPF,
+                dataNasc: dataNasc,
+                telefone: telefone
+              })
+              if(resposta.status == 201){
+                alert("Usuário Criado")
+              }else{
+                alert("Falha ao criar Usuário")
+              }
+            }}
           />
         </ContainerButton>
         <ContainerSenha>
