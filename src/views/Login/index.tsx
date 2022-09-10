@@ -1,4 +1,5 @@
-import React from "react";
+import React,{useState} from "react";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 import Arrows from "../../components/Arrows";
 import Logo from "../../components/Logo";
@@ -22,8 +23,12 @@ import {
   RecuperarSenha,
   ContainerCadastro,
 } from "../../global/styles/Login/login";
+import api from "../../../Api";
 
 export default function Login({ navigation }: PropsNavigation) {
+  const [email, setEmail] = useState("")
+  const [senha, setSenha] = useState("")
+
   return (
     <Container>
       <ScrollView>
@@ -39,8 +44,12 @@ export default function Login({ navigation }: PropsNavigation) {
         </Header>
         <Linhas />
         <ContainerInputs>
-          <Inputs placeholder="Digite seu e-mail" />
-          <Inputs placeholder="Digite sua senha" secure={true} />
+          <Inputs placeholder="Digite seu e-mail" onChangeText={(text)=>{
+            setEmail(text)
+          }}/>
+          <Inputs placeholder="Digite sua senha" secure={true} onChangeText={(text)=>{
+            setSenha(text)
+          }}/>
         </ContainerInputs>
         <ContainerButton>
           <Button
@@ -48,7 +57,21 @@ export default function Login({ navigation }: PropsNavigation) {
             color="#FB9400"
             textColor="#fff"
             strokeColor
-            funcao={() => alert("Clicou Para Enviar")}
+            funcao={async () => {
+              await api.post("/login",{
+                email: email,
+                senha: senha
+              })
+              .then((resposta)=>{
+              if(resposta.status == 200){
+                AsyncStorage.setItem(`Token`, resposta.data)
+                AsyncStorage.setItem("emailUser", email)
+                navigation.navigate("CardapioDrawer")
+              }
+              }).catch(erro=>{
+                alert("Erro ao fazer Login")
+              })
+            }}
           />
         </ContainerButton>
         <ContainerSenha>

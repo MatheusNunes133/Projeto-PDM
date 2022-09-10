@@ -18,3 +18,17 @@ export const ButtonLogin = styled.TouchableOpacity`
 export const TextButton = styled.Text`
   color: #fff;
 `;
+
+export const ContainerPerfil = styled.View`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+margin: 10% 5% 0 5%;
+`
+export const NameUser = styled.Text`
+font-size: 24px;
+font-weight: 500;
+line-height:29.05px;
+color: #1B1B1B;
+`

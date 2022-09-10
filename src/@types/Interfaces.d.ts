@@ -5,12 +5,18 @@ export declare global {
       openDrawer: Function;
       goBack: Function;
     };
+    route: Object;
   }
 
   interface PropsArrows {
     name: string;
     sizeArrow: number;
     color?: string;
+  }
+
+  interface PropsMaps {
+    width: number;
+    height: number;
   }
 
   interface PropsButton {
@@ -21,9 +27,22 @@ export declare global {
     strokeColor?: boolean;
   }
 
+  interface PropsButtonIcon {
+    icon: string;
+    color: string;
+    funcao?: Function;
+    height: number;
+    width: number;
+    marginLeft: number;
+    marginRight: number;
+    marginBottom: number;
+  }
+
   interface PropsInputs {
     placeholder: string;
     secure?: boolean;
+    onChangeText?: Function;
+    maxLength?: number;
   }
 
   interface PropsCardsCardapio {
