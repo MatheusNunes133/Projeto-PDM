@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import burger from "../../../assets/images/img-Texas-Burger.png";
 
-export default function Burger({ item: { image, subname, name, preco } }) {
-  const [numPedidos, setNumPedidos] = useState(0);
+export default function Burger({ item: { image, subname, name, preco, quantidade } }) {
+  const [numPedidos, setNumPedidos] = useState(quantidade);
 
   return (
     <View style={styles.container}>
