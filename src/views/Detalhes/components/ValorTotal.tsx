@@ -1,12 +1,12 @@
 import React from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function ValorTotal({ subtotal, frete, total }) {
+export default function ValorTotal({props: { valorTotal, frete }}) {
   return (
     <View style={styles.container}>
       <View style={styles.grid}>
         <Text>Subtotal</Text>
-        <Text style={styles.valor}>R$ {subtotal}</Text>
+        <Text style={styles.valor}>R$ {valorTotal}</Text>
       </View>
 
       <View style={[styles.grid, styles.frete]}>
@@ -16,7 +16,7 @@ export default function ValorTotal({ subtotal, frete, total }) {
 
       <View style={[styles.grid, styles.total]}>
         <Text>Total</Text>
-        <Text style={styles.valorTotal}>R$ {total}</Text>
+        <Text style={styles.valorTotal}>R$ {valorTotal + frete}</Text>
       </View>
     </View>
   );

@@ -2,24 +2,25 @@ import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import seta from "../../../../assets/images/seta.png";
 
-export default function Pedido({ item: { nome, descricao, total, image } }) {
+export default function Pedido({ item: { id, valorTotal, status }}) {
+
   return (
     <View style={styles.container}>
-      <View style={styles.itens}>
-        <View>
-          <Text style={styles.nome}> {nome} </Text>
-          <Text style={styles.descricao}> {descricao} </Text>
+      <View style={styles.itens}> 
+        <View>  
+          <Text style={styles.nome}> Pedido #{id} </Text>
+          <Text style={styles.descricao}> Tradicional </Text>
         </View>
 
         <View style={styles.status}>
-          <Text style={styles.statusText}> Enviado </Text>
+          <Text style={styles.statusText}> { status } </Text>
         </View>
       </View>
 
       <View style={styles.itens}>
         <View>
           <Text style={styles.descricao}> Total </Text>
-          <Text style={styles.preco}>R$ {total} </Text>
+          <Text style={styles.preco}>R$ {valorTotal} </Text>
         </View>
 
         <TouchableOpacity style={styles.botao} >
@@ -36,7 +37,6 @@ const styles = StyleSheet.create({
     height: 156,
     backgroundColor: "white",
     borderRadius: 6,
-    flexDirection: "row",
     marginBottom: 25,
     // Android
     elevation: 15,

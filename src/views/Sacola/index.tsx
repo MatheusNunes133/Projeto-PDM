@@ -6,6 +6,7 @@ import Burger from "../../components/Sacola/Burger";
 import ValorTotal from "../../components/Sacola/ValorTotal";
 import Button from "../../components/Button";
 
+
 import {
   Container,
   ScrollView,
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
 });
 
 export default function Inicio({ navigation }: PropsNavigation) {
-  const [itens,setItens]= useState([])
+const [itens,setItens]= useState([])
 
   AsyncStorage.getItem("Sacola").then(resp=>{
     return setItens(JSON.parse(resp))
@@ -85,10 +86,16 @@ itens.forEach(i=>{
           </ArrowBack>
           <TitlePage>Sacola</TitlePage>
         </Header>
+  setItem()
         <ContainerItemCount>
           <InfoCount>{itens.length == 1 ? `${itens.length} Item` : `${itens.length} Itens`}</InfoCount>
         </ContainerItemCount>
-
+        <FlatList
+          data={sacola}
+          showsVerticalScrollIndicator={false}
+          renderItem={Burger}
+          keyExtractor={() => {}}
+        />
         <ContainerSacolaPrincipal>
           <FlatList
           data={itens}
@@ -117,7 +124,8 @@ itens.forEach(i=>{
             </View>
           </ContainerInfo>
 
-          <ValorTotal subtotal={total} frete={"5,00"} total={total+5} />
+
+          <ValorTotal subtotal={total} frete={"5,00"} total={total+5} navegacao={navigation}/>
           </ScrollView>
         </ContainerSacolaPrincipal>
         

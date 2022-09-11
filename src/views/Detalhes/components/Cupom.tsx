@@ -1,8 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 
-import confirmar from "../../../assets/images/confirmar.png";
-import cupom from "../../../assets/images/cupom.png";
+import confirmar from "../../../../assets/images/confirmar.png";
+import cupom from "../../../../assets/images/cupom.png";
 
 export default function Cupom() {
   return (

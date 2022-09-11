@@ -183,11 +183,11 @@ function Navegacao() {
           component={Pedidos}
           options={{ headerShown: false }}
         />
-        {/*         <Stack.Screen
+        {       <Stack.Screen
           name="Detalhes"
           component={Detalhes}
           options={{ headerShown: false }}
-        /> */}
+        />}
       </Stack.Navigator>
     </NavigationContainer>
   );

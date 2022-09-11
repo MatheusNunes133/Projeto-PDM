@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
-import ponto from "../../../assets/images/ponto.png";
-import next from "../../../assets/images/next.png";
+import ponto from "../../../../assets/images/ponto.png";
+import next from "../../../../assets/images/next.png";
 
-export default function SubTopo({ props }) {
+export default function Endereco() {
   return (
     <>
       <View style={styles.container}>
-        <Text>Endereï¿½o</Text>
+        <Text>Endereço</Text>
         <View style={styles.card}>
           <View style={styles.imagem}>
             <Image source={ponto}></Image>
