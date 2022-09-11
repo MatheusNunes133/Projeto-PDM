@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 
-export default function ValorTotal( {subtotal, frete, total}){
+export default function ValorTotal( {subtotal, frete, total, navegacao}){
     return <View style={styles.container}>
 
         <View style={styles.grid}>
@@ -19,7 +19,10 @@ export default function ValorTotal( {subtotal, frete, total}){
             <Text style={styles.valorTotal}>R$ {total}</Text>
         </View>
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao}
+        onPress= {() => {
+            navegacao.navigate('Checkout')
+        }}>
             <Text style={styles.textoBotao}>Finalizar Pedido</Text>
         </TouchableOpacity>
     </View>

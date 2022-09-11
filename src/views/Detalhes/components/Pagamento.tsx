@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
-import sifrao from "../../../assets/images/sifrao.png";
-import cartao from "../../../assets/images/cartao.png";
+import sifrao from "../../../../assets/images/sifrao.png";
+import cartao from "../../../../assets/images/cartao.png";
 
 export default function Pagamento() {
   return (

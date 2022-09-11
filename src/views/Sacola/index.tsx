@@ -1,8 +1,5 @@
-import React, {useState} from "react";
-
-import { StyleSheet, Text, View, FlatList } from "react-native";
 import React,{useState, useEffect} from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, FlatList } from "react-native";
 
 import Arrows from "../../components/Arrows";
 import Burger from "../../components/Sacola/Burger";
@@ -81,12 +78,11 @@ export default function Inicio({ navigation }: PropsNavigation) {
           <InfoCount>4 itens</InfoCount>
         </ContainerItemCount>
         <FlatList
-        data={Itens}
-        showsVerticalScrollIndicator={false}
-        renderItem={Burger}
-        keyExtractor={() => {}}
-        
-      />
+          data={sacola}
+          showsVerticalScrollIndicator={false}
+          renderItem={Burger}
+          keyExtractor={() => {}}
+        />
         <ContainerSacolaPrincipal>
           <Burger
             item={{

@@ -1,23 +1,24 @@
 import React, { useState } from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
-import seta from "../../../assets/images/burger.png";
+import seta from "../../../../assets/images/burger.png";
 
-export default function Burger({ item: { image, subname, name, preco } }) {
+export default function Burger({ item: { item, quantItem } }) {
+
   return (
     <View style={styles.container}>
       <Image source={seta} style={styles.imagem} />
 
       <View>
-        <Text style={styles.subname}>{subname}</Text>
-        <Text style={styles.name}>{name}</Text>
-        <Text style={styles.preco}>{preco}</Text>
+        <Text style={styles.subname}>Tradicional</Text>
+        <Text style={styles.name}>{item.nome}</Text>
+        <Text style={styles.preco}>R$ {item.valorUnitario},00</Text>
       </View>
 
       <View style={styles.quantItens}>
         <Text style={styles.quantItensText}>Qnt.</Text>
 
         <View style={styles.quantItensNumber}>
-          <Text style={styles.number}>01</Text>
+          <Text style={styles.number}>{quantItem}</Text>
         </View>
       </View>
     </View>

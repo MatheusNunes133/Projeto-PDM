@@ -1,12 +1,12 @@
 import React from "react";
 import { View , Text , StyleSheet} from "react-native"
 
-export default function SubTopo ({ props }) {
+export default function SubTopo ({ props , status}) {
     return <>
         <View style={styles.quantItens}>
             <Text> { props } </Text>
             <View style={styles.status}>
-                <Text style={styles.statusText}> Enviado </Text>
+                <Text style={styles.statusText}> { status } </Text>
             </View>
         </View>
     </>
