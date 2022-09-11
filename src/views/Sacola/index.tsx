@@ -68,7 +68,15 @@ export default function Inicio({ navigation }: PropsNavigation) {
   )
  }
 let total = 0
-itens.forEach(i=>{total += i.preco})
+itens.forEach(i=>{
+  if(i.quantidade == 0){
+    let quantidade = 1
+    total += i.preco * quantidade
+  }else{
+    total += i.preco * i.quantidade
+  }
+  
+})
   return (
     <Container>
         <Header>
@@ -78,7 +86,7 @@ itens.forEach(i=>{total += i.preco})
           <TitlePage>Sacola</TitlePage>
         </Header>
         <ContainerItemCount>
-          <InfoCount>{itens.length == 1 ? `${itens.length} Item` : `${itens.length} Items`}</InfoCount>
+          <InfoCount>{itens.length == 1 ? `${itens.length} Item` : `${itens.length} Itens`}</InfoCount>
         </ContainerItemCount>
 
         <ContainerSacolaPrincipal>
