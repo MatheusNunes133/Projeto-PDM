@@ -52,7 +52,6 @@ export default function Cardapio({ navigation, route }: PropsNavigation) {
     }
     teste();
   }, []);
-  console.log(listItems);
 
   function renderItens({ item }) {
     if (item.valorUnitario != 0) {
@@ -61,13 +60,13 @@ export default function Cardapio({ navigation, route }: PropsNavigation) {
           hamburguerName={item.nome}
           hamburguerPrice={item.valorUnitario}
           hamburguerType="Tradicional"
-          image={require("/home/matheus/Área de Trabalho/Análise e Desenvolvimento de Sistemas/PDM/B7/assets/images/img-Texas-Burger.png")}
+          image={require("../../../assets/images/img-Texas-Burger.png")}
           funcao={() =>
             navigation.navigate("Produtos", {
               paramKey: {
                 hamburguerName: item.nome,
                 hamburguerType: "Tradicional",
-                image: require("/home/matheus/Área de Trabalho/Análise e Desenvolvimento de Sistemas/PDM/B7/assets/images/img-Texas-Burger.png"),
+                image: require("../../../assets/images/img-Texas-Burger.png"),
                 hamburguerPrice: item.valorUnitario,
                 desc: item.ingredientes,
               },

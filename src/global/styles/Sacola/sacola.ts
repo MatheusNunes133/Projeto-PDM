@@ -6,7 +6,8 @@ export const Container = styled.View`
   background-color: #ffffff;
 `;
 
-export const ScrollView = styled.ScrollView``;
+export const ScrollView = styled.ScrollView`
+height: 400px`;
 
 export const TitlePage = styled.Text`
   /* align-self: flex-end; */
@@ -55,7 +56,7 @@ export const TitleFrete = styled.Text`
 export const TextButton = styled.Text`
   color: #6a7d8b;
 `;
-export const Button = styled.TouchableOpacity`
+export const ButtonOk = styled.TouchableOpacity`
   display: flex;
   align-items: center;
   justify-content: center;
