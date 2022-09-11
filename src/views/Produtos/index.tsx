@@ -48,7 +48,7 @@ export default function Produtos({ navigation, route }: PropsNavigation) {
       array.push({name: hamburguerName,preco: hamburguerPrice,subname: hamburguerType, quantidade: quantidade})
       await AsyncStorage.setItem("Sacola", JSON.stringify(array))
     }
-    
+    alert("Item Adicionado à Sacola!")
   }
   
 
