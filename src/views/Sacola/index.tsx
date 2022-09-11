@@ -90,12 +90,6 @@ itens.forEach(i=>{
         <ContainerItemCount>
           <InfoCount>{itens.length == 1 ? `${itens.length} Item` : `${itens.length} Itens`}</InfoCount>
         </ContainerItemCount>
-        <FlatList
-          data={sacola}
-          showsVerticalScrollIndicator={false}
-          renderItem={Burger}
-          keyExtractor={() => {}}
-        />
         <ContainerSacolaPrincipal>
           <FlatList
           data={itens}
@@ -119,7 +113,7 @@ itens.forEach(i=>{
             <View
               style={{ display: "flex", flexDirection: "row", marginTop: 20 }}
             >
-              <Text style={styles.text1}>Receba em atÃ© 20 minutos</Text>
+              <Text style={styles.text1}>Receba em até 20 minutos</Text>
               <Text style={styles.text2}>R$ 12,50</Text>
             </View>
           </ContainerInfo>

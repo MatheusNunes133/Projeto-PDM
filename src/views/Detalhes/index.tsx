@@ -20,10 +20,10 @@ import ValorTotal from "./components/ValorTotal";
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export default function Detalhes({route, navigation}) {
+export default function Detalhes({ route, navigation }) {
   
-  const {itemID} = route.params;
-
+  const {itemId} = route.params;
+  
   const [token, setToken] = useState()
   const [name, setName] = useState()
   const [listItems, setItem] = useState([]);
@@ -37,7 +37,7 @@ export default function Detalhes({route, navigation}) {
   getToken()
 
   async function getUsers(){
-    let users = await api.get(`/pedidos/${itemID}`,{headers:{
+    let users = await api.get(`/pedidos/${itemId}`,{headers:{
       "Authorization": token
     }})
     let arrayUsers = users.data
@@ -50,13 +50,14 @@ export default function Detalhes({route, navigation}) {
     })
   }
   getUsers()
-  const itens1 = listItems.itens
+
+  const itens = listItems.itens
   const quantItens = itens.length == 1 ? "1 item" : itens.length + " itens";
 
   return (
     <>
       <FlatList
-        data={itens1}
+        data={itens}
         showsVerticalScrollIndicator={false}
         renderItem={Burger}
         keyExtractor={(item) => {item.id}}
@@ -74,7 +75,7 @@ export default function Detalhes({route, navigation}) {
         ListHeaderComponent={() => {
           return (
             <>
-              <Topo children={`Pedido #${itemID}`} navegacao={navigation}/>
+              <Topo children={`Pedido #${itemId}`} navegacao={navigation}/>
               <SubTopo props={quantItens} status={listItems.status}/>
             </>
           );
