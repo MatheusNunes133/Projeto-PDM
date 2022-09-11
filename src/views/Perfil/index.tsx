@@ -16,7 +16,7 @@ import * as ImagePicker from 'expo-image-picker';
 import Linhas from "../../components/Linhas";
 import Inputs from "../../components/Inputs";
 import Button from "../../components/Button";
-import api from "../../Api";
+import api from "../../../Api";
 import AsyncStorage from '@react-native-async-storage/async-storage'
 
 
