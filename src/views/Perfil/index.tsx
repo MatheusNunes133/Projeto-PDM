@@ -1,4 +1,3 @@
- // @ts-nocheck
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View, Image } from 'react-native';
 import Icone from "react-native-vector-icons/MaterialCommunityIcons";
