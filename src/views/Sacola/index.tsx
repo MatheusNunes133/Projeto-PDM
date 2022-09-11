@@ -1,8 +1,11 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, {useState} from "react";
+
+import { StyleSheet, Text, View, FlatList } from "react-native";
 import Arrows from "../../components/Arrows";
 import Burger from "../../components/Sacola/Burger";
 import ValorTotal from "../../components/Sacola/ValorTotal";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 import {
   Container,
@@ -49,6 +52,16 @@ const styles = StyleSheet.create({
 });
 
 export default function Inicio({ navigation }: PropsNavigation) {
+
+  const [Itens, setItem] = useState();
+
+  async function getItens(){
+    let arr = await AsyncStorage.getItem('Sacola')
+    setItem(arr)
+  }
+
+  console.log(Itens)
+
   return (
     <Container>
       <ScrollView>
@@ -58,10 +71,17 @@ export default function Inicio({ navigation }: PropsNavigation) {
           </ArrowBack>
           <TitlePage>Sacola</TitlePage>
         </Header>
+  setItem()
         <ContainerItemCount>
           <InfoCount>4 itens</InfoCount>
         </ContainerItemCount>
-
+        <FlatList
+        data={Itens}
+        showsVerticalScrollIndicator={false}
+        renderItem={Burger}
+        keyExtractor={() => {}}
+        
+      />
         <ContainerSacolaPrincipal>
           <Burger
             item={{
@@ -116,7 +136,7 @@ export default function Inicio({ navigation }: PropsNavigation) {
             </View>
           </ContainerInfo>
 
-          <ValorTotal subtotal={"54,00"} frete={"5,00"} total={"59,00"} />
+          <ValorTotal subtotal={"54,00"} frete={"5,00"} total={"59,00"} navegacao={navigation}/>
         </ContainerSacolaPrincipal>
       </ScrollView>
     </Container>
