@@ -117,7 +117,7 @@ itens.forEach(i=>{
             </View>
           </ContainerInfo>
 
-          <ValorTotal subtotal={total} frete={"5,00"} total={total+5} />
+          <ValorTotal subtotal={total} frete={"5,00"} total={total+5} navegacao={navigation} itens={itens}/>
           </ScrollView>
         </ContainerSacolaPrincipal>
         
