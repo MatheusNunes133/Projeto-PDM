@@ -1,8 +1,10 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { StyleSheet, Text, View, FlatList } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import Arrows from "../../components/Arrows";
 import Burger from "../../components/Sacola/Burger";
 import ValorTotal from "../../components/Sacola/ValorTotal";
+import Button from "../../components/Button";
 
 import {
   Container,
@@ -15,7 +17,7 @@ import {
   InfoCount,
   ContainerSacolaPrincipal,
   Input,
-  Button,
+  ButtonOk,
   TextButton,
   TitleFrete,
   ContainerInfo,
@@ -46,12 +48,37 @@ const styles = StyleSheet.create({
     marginTop: 30,
     alignSelf: "flex-start",
   },
+  marginFlatList:{
+    marginBottom: 20,
+    height: 120
+  }
 });
 
 export default function Inicio({ navigation }: PropsNavigation) {
+  const [itens,setItens]= useState([])
+
+  AsyncStorage.getItem("Sacola").then(resp=>{
+    return setItens(JSON.parse(resp))
+  })
+
+
+ function render ({item}){
+  return (
+    <Burger item={item}/>
+  )
+ }
+let total = 0
+itens.forEach(i=>{
+  if(i.quantidade == 0){
+    let quantidade = 1
+    total += i.preco * quantidade
+  }else{
+    total += i.preco * i.quantidade
+  }
+  
+})
   return (
     <Container>
-      <ScrollView>
         <Header>
           <ArrowBack onPress={() => navigation.navigate("Cardapio")}>
             <Arrows name="arrow-back" sizeArrow={30} color="#FB9400" />
@@ -59,49 +86,23 @@ export default function Inicio({ navigation }: PropsNavigation) {
           <TitlePage>Sacola</TitlePage>
         </Header>
         <ContainerItemCount>
-          <InfoCount>4 itens</InfoCount>
+          <InfoCount>{itens.length == 1 ? `${itens.length} Item` : `${itens.length} Itens`}</InfoCount>
         </ContainerItemCount>
 
         <ContainerSacolaPrincipal>
-          <Burger
-            item={{
-              image: "Name",
-              subname: "Tradicional",
-              name: "Teste",
-              preco: "R$ 30,00",
-            }}
+          <FlatList
+          data={itens}
+          renderItem={render}
+          keyExtractor={()=>{}}
+          style={styles.marginFlatList}
           />
-          <Burger
-            item={{
-              image: "Name",
-              subname: "Tradicional",
-              name: "Teste",
-              preco: "R$ 30,00",
-            }}
-          />
-          <Burger
-            item={{
-              image: "Name",
-              subname: "Tradicional",
-              name: "Teste",
-              preco: "R$ 30,00",
-            }}
-          />
-          <Burger
-            item={{
-              image: "Name",
-              subname: "Tradicional",
-              name: "Teste",
-              preco: "R$ 30,00",
-            }}
-          />
-
+        <ScrollView>
           <TitleFrete>Calcular frete e prazo</TitleFrete>
           <ContainerFrete>
             <Input placeholder="12345-123" />
-            <Button>
+            <ButtonOk>
               <TextButton>OK</TextButton>
-            </Button>
+            </ButtonOk>
           </ContainerFrete>
 
           <ContainerInfo>
@@ -116,9 +117,10 @@ export default function Inicio({ navigation }: PropsNavigation) {
             </View>
           </ContainerInfo>
 
-          <ValorTotal subtotal={"54,00"} frete={"5,00"} total={"59,00"} />
+          <ValorTotal subtotal={total} frete={"5,00"} total={total+5} />
+          </ScrollView>
         </ContainerSacolaPrincipal>
-      </ScrollView>
+        
     </Container>
   );
 }

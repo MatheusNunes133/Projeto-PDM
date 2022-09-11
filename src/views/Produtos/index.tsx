@@ -36,16 +36,21 @@ export default function Produtos({ navigation, route }: PropsNavigation) {
     route.params.paramKey;
 
   const [quantidade, setQuantidade] = useState(0);
+  const [teste,setTeste] = useState([])
 
-async function addSacola(){
-  let result = []
-  result.push({name: hamburguerName,preco: hamburguerPrice,subname: hamburguerType, quantidade: quantidade})
-
-  AsyncStorage.setItem("Sacola", JSON.stringify(result))
+  async function addSacola(){
+    let array = await AsyncStorage.getItem("Sacola") || []
+    if(array.length != 0){
+      let result = JSON.parse(array)
+      result.push({name: hamburguerName,preco: hamburguerPrice,subname: hamburguerType, quantidade: quantidade})
+      await AsyncStorage.setItem("Sacola", JSON.stringify(result))
+    }else{
+      array.push({name: hamburguerName,preco: hamburguerPrice,subname: hamburguerType, quantidade: quantidade})
+      await AsyncStorage.setItem("Sacola", JSON.stringify(array))
+    }
+    alert("Item Adicionado à Sacola!")
+  }
   
-  console.log(await AsyncStorage.getItem("Sacola"))
-
-}
 
   return (
     <Container>
