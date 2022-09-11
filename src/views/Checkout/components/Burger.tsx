@@ -3,7 +3,7 @@ import { View, Image , Text , StyleSheet, TouchableOpacity} from "react-native";
 import seta from '../../../../assets/images/burger.png'
 
 
-export default function Burger( {item: { image, subname, name, preco}}){
+export default function Burger( {item: { image, subname, name, preco, quantidade}}){
 
 
 
@@ -13,7 +13,7 @@ export default function Burger( {item: { image, subname, name, preco}}){
         <View>
             <Text style={styles.subname} >{subname}</Text>
             <Text style={styles.name}>{name}</Text>
-            <Text style={styles.preco}>{preco}</Text>
+            <Text style={styles.preco}>R$ {preco}</Text>
         </View>
 
         <View style={styles.quantItens}>
@@ -24,7 +24,7 @@ export default function Burger( {item: { image, subname, name, preco}}){
 
 
             <View style={styles.quantItens2}>
-                <Text style={styles.number}>01</Text>
+                <Text style={styles.number}>{quantidade}</Text>
             </View>
 
 
