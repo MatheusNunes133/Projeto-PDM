@@ -12,7 +12,7 @@ export default function Burger({ item: { image, subname, name, preco } }) {
       <View>
         <Text style={styles.subname}>{subname}</Text>
         <Text style={styles.name}>{name}</Text>
-        <Text style={styles.preco}>{preco}</Text>
+        <Text style={styles.preco}>R$ {preco}</Text>
       </View>
 
       <View style={styles.quantItens}>
@@ -69,6 +69,7 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: "500",
+    width: 100
   },
   preco: {
     fontSize: 16,
