@@ -1,8 +1,9 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Arrows from "../../components/Arrows";
 import Burger from "../../components/Sacola/Burger";
 import ValorTotal from "../../components/Sacola/ValorTotal";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import {
   Container,
@@ -49,6 +50,17 @@ const styles = StyleSheet.create({
 });
 
 export default function Inicio({ navigation }: PropsNavigation) {
+  const [sacola, setSacola] = useState()
+  useEffect(()=>{
+
+
+    async function teste(){
+      let array = await AsyncStorage.getItem("Sacola")
+      setSacola(array)
+    }
+    teste()
+  },[])
+  console.log(sacola)
   return (
     <Container>
       <ScrollView>
