@@ -9,7 +9,6 @@ import {
 } from "react-native";
 
 import Burger from "./components/Burger";
-import itens from "../../components/mock/cardapio";
 import Endereco from "./components/Endereco";
 import Pagamento from "./components/Pagamento";
 import SubTopo from "./components/SubTopo";
@@ -17,28 +16,35 @@ import Troco from "./components/Troco";
 import Cupom from "./components/Cupom";
 import ValorTotal from "./components/ValorTotal";
 
-export default function Checkout({ navigation }: PropsNavigation) {
-  const quantItens = itens.length == 1 ? "1 item" : itens.length + " itens";
+export default function Checkout({ navigation,route }: PropsNavigation) {
+  let arrayItens = route.params.itens
+  let total = route.params.total
+
+  function render ({item}){
+    return (
+      <Burger item={item}/>
+    )
+   }
 
   return (
     <>
       <FlatList
-        data={itens}
+        data={arrayItens}
         showsVerticalScrollIndicator={false}
-        renderItem={Burger}
+        renderItem={render}
         keyExtractor={() => {}}
         ListFooterComponent={() => {
-          return <ValorTotal />;
+          return <ValorTotal frete={"5,00"} subtotal={total-5} total={total}/>;
         }}
         ListHeaderComponent={() => {
           return (
             <>
               <Topo children={"Checkout"} navegacao={navigation} />
-              <Endereco />
+              <Endereco navegacao={navigation}/>
               <Pagamento />
               <Troco troco={50} />
               <Cupom />
-              <SubTopo props={quantItens} />
+              <SubTopo props={arrayItens.length == 1 ? `${arrayItens.length} Item` : `${arrayItens.length} Itens`} />
             </>
           );
         }}

@@ -35,7 +35,7 @@ export default function Produtos({ navigation, route }: PropsNavigation) {
   const { hamburguerName, hamburguerType, image, hamburguerPrice, desc } =
     route.params.paramKey;
 
-  const [quantidade, setQuantidade] = useState(0);
+  const [quantidade, setQuantidade] = useState(1);
   const [teste,setTeste] = useState([])
 
   async function addSacola(){
@@ -87,8 +87,8 @@ export default function Produtos({ navigation, route }: PropsNavigation) {
             <ContainerButtons>
               <ButtonMenos
                 onPress={() => {
-                  if (quantidade < 1) {
-                    setQuantidade(0);
+                  if (quantidade < 2) {
+                    setQuantidade(1);
                   } else {
                     setQuantidade(quantidade - 1);
                   }

@@ -43,6 +43,7 @@ export declare global {
     secure?: boolean;
     onChangeText?: Function;
     maxLength?: number;
+    type?: string;
   }
 
   interface PropsCardsCardapio {
