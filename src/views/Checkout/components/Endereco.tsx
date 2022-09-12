@@ -3,10 +3,10 @@ import { View, Image , Text , StyleSheet, TouchableOpacity } from "react-native"
 import ponto from '../../../../assets/images/ponto.png'
 import next from '../../../../assets/images/next.png'
 
-export default function SubTopo ({ props }) {
+export default function SubTopo (props) {
     return <>
     <View style={styles.container}>
-        <Text>Endere�o</Text>
+        <Text>Endereço</Text>
         <View style={styles.card}>
 
             <View style={styles.imagem}>
@@ -14,7 +14,7 @@ export default function SubTopo ({ props }) {
             </View>
             
             <Text>321 - Rua das Flores - Jardins...</Text>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={()=>props.navegacao.navigate("Endereco")}>
                 <Image source={next}></Image>   
             </TouchableOpacity>
            

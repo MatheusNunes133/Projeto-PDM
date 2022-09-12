@@ -23,19 +23,35 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 export default function Perfil({ navigation }: PropsNavigation) {
 
   const [image, setImage] = useState<any>(null);
+  const [nome, setNome] = useState("")
   const [email, setEmail] = useState("")
   const [senha, setSenha] = useState("")
 
   useEffect(() => {
-    try {
-      const data =  api.get(`/clientes`);
-      alert(data);
-    } catch (error) {
-      // Error retrieving data
-      console.log("Error 2: ", error);
+    async function teste() {
+      try {
+        let resp = await api.get('/clientes', {
+          headers: {
+            'Authorization': `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJtYWlsQG1haWwuY29tIiwiZXhwIjoxNjYyODUyMjc4fQ.5JRzae4n3TZgSVe5X3CX9HMCP_UuAx4LJmsHsSgoLeDSaSqla4mRq7hLHft9e_9J513HQN_TZkUZPwiCHvc2fQ`,
+            "Access-Control-Allow-Origin": "*",
+            "Access-Control-Allow-Headers": "Authorization",
+            "Access-Control-Allow-Methods": "GET, POST, OPTIONS, PUT, PATCH, DELETE",
+          }
+        }).then(
+          setNome(resp.data.nome),
+          setEmail(resp.data.email),
+          setSenha(resp.data.senha)
+        )
+      } catch (erro) {
+        if (erro.response) {
+          console.log(erro.response.data);
+          console.log(erro.response.status);
+          console.log(erro.response.headers);
+        }
+      }
     }
-},[])
-
+    teste();
+  }, []);
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -70,11 +86,13 @@ export default function Perfil({ navigation }: PropsNavigation) {
         </Header>
         <Linhas />
         <ContainerInputs>
-          <Inputs placeholder="Nome" />
-          <Inputs placeholder="Edite seu e-mail" onChangeText={(text: any) => {
+        <Inputs placeholder={`Altere seu nome:`} onChangeText={(text) => {
+            setNome(text)
+          }} />       
+          <Inputs placeholder={`Altere seu e-mail: `} onChangeText={(text) => {
             setEmail(text)
           }} />
-          <Inputs placeholder="nova senha" secure onChangeText={(text: any) => {
+          <Inputs placeholder={`Altere sua senha: ${senha}`} secure onChangeText={(text) => {
             setSenha(text)
           }} />
         </ContainerInputs>
@@ -88,6 +106,19 @@ export default function Perfil({ navigation }: PropsNavigation) {
             color="#FB9400"
             textColor="#fff"
             strokeColor
+            funcao={async () => {
+              let resposta = await api.post("/clientes", {
+                nome: nome,
+                email: email,
+                senha: senha,
+              })
+              alert(resposta);
+              if (resposta.status == 201) {
+                alert("Usuário Alterado")
+              } else {
+                alert("Falha ao alterar Usuário")
+              }
+            }}
           />
         </ContainerButton>
         <Box />

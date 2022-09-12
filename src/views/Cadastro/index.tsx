@@ -59,13 +59,13 @@ const [dataNasc, setDataNasc] = useState("")
           }}/>
           <Inputs placeholder="Digite seu CPF" maxLength={14} onChangeText={(text)=>{
             setCPF(text)
-          }}/>
+          }} type="numeric"/>
           <Inputs placeholder="Digite sua data de nascimento (AAAA-MM-DD)"  maxLength={10} onChangeText={(text)=>{
             setDataNasc(text)
-          }}/>
+          }} type="numeric" />
           <Inputs placeholder="Digite seu telefone" maxLength={11} onChangeText={(text)=>{
             setTelefone(text)
-          }}/>
+          }} type="numeric" />
         </ContainerInputs>
         <ContainerButton>
           <Button
@@ -74,6 +74,7 @@ const [dataNasc, setDataNasc] = useState("")
             textColor="#fff"
             strokeColor
             funcao={async ()=>{
+              try{
               let resposta = await api.post("/clientes",{
                 nome: nome,
                 email: email,
@@ -84,8 +85,8 @@ const [dataNasc, setDataNasc] = useState("")
               })
               if(resposta.status == 201){
                 alert("Usuário Criado")
-              }else{
-                alert("Falha ao criar Usuário")
+              }}catch(error){
+                alert("Erro ao se cadastrar (Preencha todos os campos ou tente informar a data de nascimento no formato correto)")
               }
             }}
           />
