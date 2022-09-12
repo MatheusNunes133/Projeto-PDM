@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image, Text, StyleSheet, TouchableOpacity } from "react-native";
 import seta from "../../../../assets/images/seta.png";
 
-export default function Pedido({ item: { id, valorTotal, status }}) {
+export default function Pedido({ navegacao, item: { id, valorTotal, status }}) {
 
   return (
     <View style={styles.container}>
@@ -23,8 +23,13 @@ export default function Pedido({ item: { id, valorTotal, status }}) {
           <Text style={styles.preco}>R$ {valorTotal} </Text>
         </View>
 
-        <TouchableOpacity style={styles.botao} >
-          <Image source={seta} />
+        <TouchableOpacity style={styles.botao} 
+        onPress={() => 
+          navegacao.navigate("Detalhes", {
+              itemId: id,
+          })
+        }>
+          <Image source={seta}/>
         </TouchableOpacity>
       </View>
     </View>
