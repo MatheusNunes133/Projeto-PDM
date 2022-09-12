@@ -1,7 +1,66 @@
-import React from 'react';
+import React, {useState} from 'react';
+import api from '../../../../Api'
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
-export default function ValorTotal( {subtotal, frete, total}){
+export default function ValorTotal( {navegacao, itens, subtotal, frete, total}){
+  const [token, setToken] = useState()
+  const [name, setName] = useState()
+
+  async function getToken(){
+    let tokenUser = await AsyncStorage.getItem("Token")
+    if(tokenUser){
+      setToken(tokenUser)
+    }
+  }
+  getToken()
+
+  const headers = {
+    'Content-Type': 'application/json',
+    'Authorization': token
+  }
+
+  let data = {
+	"formaPagamento":"DINHEIRO",
+	"idEndereco":1,
+	"cpfCliente":"12345678910",
+	"cnpjEmpresa":"11111111111",
+	"troco":210,
+	"itens":[{
+		"id":{
+			"itemId":2
+		},
+		"quantItem":2
+	},
+		{
+		"id":{
+			"itemId":4
+		},
+		"quantItem":1
+	},
+					 {
+		"id":{
+			"itemId":5
+		},
+		"quantItem":3
+	}
+	]
+}
+
+
+console.log(data)
+
+  function createPost() {
+    api.post(`/pedidos/`, data, {
+        headers: headers
+      }).then((response) => {
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+    }
+  
     return <View style={styles.container}>
 
         <View style={styles.grid}>
@@ -19,7 +78,12 @@ export default function ValorTotal( {subtotal, frete, total}){
             <Text style={styles.valorTotal}>R$ {total}</Text>
         </View>
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao}
+        onPress={() => {
+            createPost();
+            navegacao.navigate('Pedidos');
+            
+            }}>
             <Text style={styles.textoBotao}>Finalizar Pedido</Text>
         </TouchableOpacity>
     </View>

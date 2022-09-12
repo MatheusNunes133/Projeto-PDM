@@ -34,7 +34,7 @@ export default function Checkout({ navigation,route }: PropsNavigation) {
         renderItem={render}
         keyExtractor={() => {}}
         ListFooterComponent={() => {
-          return <ValorTotal frete={"5,00"} subtotal={total-5} total={total}/>;
+          return <ValorTotal navegacao={navigation} itens={arrayItens} frete={"5,00"} subtotal={total-5} total={total}/>;
         }}
         ListHeaderComponent={() => {
           return (
